@@ -57,7 +57,7 @@ namespace TeeUhr
 
         private void onClickSeven(object sender, RoutedEventArgs e)
         {
-            _min = 7;
+            _min = 10;
             _sec = 0;
             FormatTime();
             timer.Start();
