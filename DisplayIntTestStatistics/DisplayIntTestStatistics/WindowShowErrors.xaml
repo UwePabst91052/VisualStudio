@@ -1,0 +1,35 @@
+﻿<Window x:Class="DisplayIntTestStatistics.WindowShowErrors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DisplayIntTestStatistics"
+        mc:Ignorable="d"
+        Title="Errors in file: " Height="280.752" Width="632.743" Loaded="Window_Loaded">
+    <Grid>
+        <FlowDocumentReader ViewingMode="Scroll">
+            <FlowDocument x:Name="fd">
+                <Table>
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell LineHeight="24">
+                                <Paragraph>Target:</Paragraph>
+                            </TableCell>
+                            <TableCell x:Name="cellTarget" LineHeight="24"/>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell LineHeight="24">
+                                <Paragraph>Filename:</Paragraph>
+                            </TableCell>
+                            <TableCell x:Name="cellFilename" LineHeight="24"/>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>
