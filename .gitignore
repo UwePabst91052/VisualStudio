@@ -2,5 +2,8 @@
 # Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
 ################################################################################
 
+/TeeUhr/obj/Release
+/.vs
+/TeeUhr/.vs/TeeUhr/v15
 /TeeUhr/bin/Debug
 /TeeUhr/obj/Debug

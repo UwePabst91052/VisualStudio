@@ -26,8 +26,8 @@ namespace TeeUhr
         private int _sec = 0;
         private int _min = 0;
         private TimeSpan time = new TimeSpan(0);
-        private SoundPlayer player = new SoundPlayer(@"C:\Users\pabst\AppData\Local\Programs\Python\Python38-32\Lib\site-packages\arcade\resources\sounds\gameover1.wav");
-        private int soundLoops = 4;
+        private SoundPlayer player = new SoundPlayer(@"..\salamisound-4708069-wecker-klingeln-tonlage-ganz.wav");
+        private int soundLoops = 1;
 
         public MainWindow()
         {
@@ -50,23 +50,14 @@ namespace TeeUhr
             }
             else
             {
-                if (soundLoops > 0)
-                {
-                    player.PlaySync();
-                    soundLoops--;
-                    timer.Start();
-                }
-                else
-                {
-                    soundLoops = 1;
-                    timer.Stop();
-                }
+                timer.Stop();
+                player.PlaySync();
             }
         }
 
         private void onClickSeven(object sender, RoutedEventArgs e)
         {
-            _min = 7;
+            _min = 10;
             _sec = 0;
             FormatTime();
             timer.Start();
@@ -93,7 +84,7 @@ namespace TeeUhr
             _min = 6;
             _sec = 30;
             FormatTime();
-            //timer.Start();
+            timer.Start();
         }
 
         private void onClickStart(object sender, RoutedEventArgs e)

@@ -10,7 +10,7 @@
         <TextBox x:Name="displayTime" HorizontalAlignment="Left" Height="59" Margin="27,27,0,0" TextWrapping="Wrap" Text="88:88" VerticalAlignment="Top" Width="160" Background="#FF343030" BorderBrush="#FF397847" Foreground="#FF62F50D" FontFamily="OCR-A" FontSize="48" FontWeight="Bold" RenderTransformOrigin="0.5,0.5"/>
         <ScrollBar x:Name="scrollSeconds" HorizontalAlignment="Left" Margin="187,27,0,0" VerticalAlignment="Top" Height="59" Background="White" Foreground="#FF0A0909" Maximum="59" Scroll="onScrollSeconds" SmallChange="1" LargeChange="10"/>
         <ScrollBar x:Name="scrollMinutes" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Height="59" Scroll="onScrollMinutes" Maximum="59" SmallChange="1"/>
-        <Button x:Name="btnSeven" Content="7 min" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.075,0.258" Click="onClickSeven"/>
+        <Button x:Name="btnSeven" Content="10 min" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.075,0.258" Click="onClickSeven"/>
         <Button x:Name="btnThree" Content="3 min" HorizontalAlignment="Left" Margin="129,114,0,0" VerticalAlignment="Top" Width="75" Click="onClickThree"/>
         <Button x:Name="btnFive" Content="5 min" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="75" Click="onClickFive"/>
         <Button x:Name="btnSixThirty" Content="6:30 min" HorizontalAlignment="Left" Margin="129,157,0,0" VerticalAlignment="Top" Width="75" Click="onClickSixThirty"/>
