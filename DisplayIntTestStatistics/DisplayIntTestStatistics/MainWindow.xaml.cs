@@ -407,23 +407,22 @@ namespace DisplayIntTestStatistics
             if (resultTargets.TryGetValue(target, out List<PtrResultDetail> value))
             {
                 string logFilePath = value.Find(x => x.TestName.Equals(search)).LogFile;
-                string[] sub = logFilePath.Split('\\', '.');
+                string[] sub = logFilePath.Split('\\');
                 if (remote)
                 {
                     sub[0] = "file://md2fmd5c";
                 }
                 else
                 {
-                    sub[0] = "file:D:";
+                    sub[0] = "file:" + sub[0];
                 }
-                sub[sub.Length - 1] = ".html";
                 logFileUrl = sub[0];
-                for (int i = 1; i < sub.Length - 1; i++)
+                for (int i = 1; i < sub.Length; i++)
                 {
                     logFileUrl += "/" + sub[i];
                 }
-                logFileUrl += sub[sub.Length - 1];
             }
+            logFileUrl = logFileUrl.Replace("result", "html");
             return logFileUrl;
         }
     }
