@@ -10,3 +10,7 @@
 /DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.exe
 /DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.exe.config
 /DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.pdb
+/CopyrightCorrection/.vs/CopyrightCorrection/v15
+/CopyrightCorrection/CopyrightCorrection/bin/Debug
+/CopyrightCorrection/CopyrightCorrection/obj/Debug
+*.txt
