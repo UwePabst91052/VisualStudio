@@ -42,15 +42,9 @@ namespace DisplayIntTestStatistics
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            lbLivetests.Items.Add("RT_DB_Job_Test1_Live");
-            lbLivetests.Items.Add("RT_Merge_Job3_Tests2_Live");
-            lbLivetests.Items.Add("RT_ST_Job_Test1_Live");
             lbLivetests.Items.Add("Merge-JobLivetest");
             lbLivetests.Items.Add("Setup-JobLivetest");
 
-            lbAcceptance.Items.Add("RT_DB_Job_Test2_Acceptance");
-            lbAcceptance.Items.Add("RT_Merge_Job4_Tests3_Merge");
-            lbAcceptance.Items.Add("RT_ST_Job_Test2_Acceptance");
             lbAcceptance.Items.Add("Merge-JobAcceptancetest");
             lbAcceptance.Items.Add("Setup-JobAcceptancetest");
 
