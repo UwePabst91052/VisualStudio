@@ -14,3 +14,6 @@
 /CopyrightCorrection/CopyrightCorrection/bin/Debug
 /CopyrightCorrection/CopyrightCorrection/obj/Debug
 *.txt
+/RegisterWebserver/.vs/RegisterWebserver/v15
+/RegisterWebserver/RegisterWebserver/bin/Debug
+/RegisterWebserver/RegisterWebserver/obj/Debug
