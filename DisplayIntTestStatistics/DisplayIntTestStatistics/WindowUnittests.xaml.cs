@@ -122,6 +122,7 @@ namespace DisplayIntTestStatistics
             string[] logfiles = Directory.GetFiles(rootFolder, "*_out.xml", SearchOption.AllDirectories);
             NumberTestfiles += logfiles.Length;
             NumberFailed += ScanLivetestOutput(logfiles, "Info");
+            NumberFailed += ScanLivetestOutput(logfiles, "Error");
 
             // scan testsudio output files
             logfiles = Directory.GetFiles(rootFolder, "x_*_tests*.xml", SearchOption.AllDirectories);
