@@ -21,7 +21,7 @@
         </StatusBar>
         <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Height="0" Width="0">
             <Label x:Name="label" Content="Test Results Path" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
-            <TextBox x:Name="tbTestResultsPath" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" Text="C:\Temp\PtrLogFiles" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="tbTestResultsPath" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="529" Text="C:\Users\pabst\source\repos\ConvertPtrResults\XmlDataSource\50" Grid.ColumnSpan="3"/>
             <Button x:Name="btnSelectFolder" Content="..." Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="31" Click="BtnSelectFolder_Click" Height="20" Canvas.Left="544" Canvas.Top="35"/>
             <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="OnBtnStartClicked" Grid.Column="2" Height="20" Canvas.Left="598" Canvas.Top="6"/>
             <Button x:Name="btnObserve" Content="Observe On" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="OnBtnObserveClicked" Grid.Column="2" IsCancel="True" Height="20" Canvas.Left="598" Canvas.Top="35"/>

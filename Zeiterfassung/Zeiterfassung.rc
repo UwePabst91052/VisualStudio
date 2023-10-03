@@ -1,0 +1,528 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Zeiterfassung.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.DEU\\afxres.rc""          // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Zeiterfassung.ico"
+
+IDR_ZeiterfassungTYPE   ICON                    "res\\ZeiterfassungDoc.ico"
+
+IDI_ICON_PAUSE          ICON                    "res\\icon1.ico"
+
+IDI_ICON_START          ICON                    "res\\icon2.ico"
+
+IDI_ICON_NEXT           ICON                    "res\\ico00001.ico"
+
+IDI_ICON_PREV           ICON                    "res\\ico00002.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_VIEW_LARGEICON
+    BUTTON      ID_VIEW_SMALLICON
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_DETAILS
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        MENUITEM "&Neu\tStrg+N",                ID_FILE_NEW
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "Konvertieren...\tStrg+K",     ID_DATEI_KONVERTIEREN
+        MENUITEM "&Speichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Ausschneiden\tStrg+X",       ID_EDIT_CUT
+        MENUITEM "&Kopieren\tStrg+C",           ID_EDIT_COPY
+        MENUITEM "&Einfügen\tStrg+V",           ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Lösche alle Notizen",         ID_BEARBEITEN_LOESCHE
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+        MENUITEM "&Teilen",                     ID_WINDOW_SPLIT
+    END
+    POPUP "Be&richte"
+    BEGIN
+        MENUITEM "&Tagesbericht",               ID_BERICHTE_TAGESBERICHT
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über Zeiterfassung...", ID_APP_ABOUT
+    END
+END
+
+IDR_CONVERSION MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        MENUITEM "&Neu\tStrg+N",                ID_FILE_NEW
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "&Speichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "&Ausschneiden\tStrg+X",       ID_EDIT_CUT
+        MENUITEM "&Kopieren\tStrg+C",           ID_EDIT_COPY
+        MENUITEM "&Einfügen\tStrg+V",           ID_EDIT_PASTE
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+        MENUITEM "&Teilen",                     ID_WINDOW_SPLIT
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über Zeiterfassung...", ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "K",            ID_DATEI_KONVERTIEREN,  VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info über Zeiterfassung"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "Zeiterfassung, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_DETAILS DIALOGEX 0, 0, 360, 189
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_TEXT,7,33,286,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Hinzufügen",IDC_BUTTON_ADD,303,34,50,14
+    PUSHBUTTON      "Löschen",IDC_BUTTON_DELETE,303,52,50,14
+    LTEXT           "Tätigkeit",IDC_STATIC,7,18,28,8
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,7,63,100,15
+    LTEXT           "Anzeigedatum",IDC_STATIC,7,53,46,8
+    LTEXT           "gespeicherte Arbeitszeiten",IDC_STATIC,7,84,86,8
+    GROUPBOX        "Ändern",IDC_STATIC,167,83,166,99
+    LTEXT           "Startzeit",IDC_STATIC,183,98,28,8
+    EDITTEXT        IDC_EDIT_START,182,107,40,12,ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Endezeit",IDC_STATIC,231,97,28,8
+    EDITTEXT        IDC_EDIT_END,230,107,40,14,ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Dauer",IDC_STATIC,281,97,20,8
+    EDITTEXT        IDC_EDIT_DURATION,279,107,40,14,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
+    PUSHBUTTON      "Übernehmen",IDC_BUTTON_APPLY,182,136,55,14
+    PUSHBUTTON      "",IDC_BUTTON_START_STOP,189,55,30,18,BS_ICON
+    CONTROL         "Änderungs Modus",IDC_CHECK_EDIT_MODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,109,15,73,10
+    PUSHBUTTON      "Hinzufügen",IDC_BUTTON_ADD_WT,182,154,55,14
+    PUSHBUTTON      "Notiz",IDC_BUTTON_NOTE,263,136,50,14
+    PUSHBUTTON      "Löschen",IDC_BUTTON_DEL_WT,263,154,50,14
+    PUSHBUTTON      "erster Tag",IDC_BUTTON2,111,63,50,14
+END
+
+IDD_NOTE DIALOGEX 0, 0, 316, 189
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Schreibe Notiz"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,168,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,168,50,14
+    CONTROL         "",IDC_RICHEDIT21,"RichEdit20W",WS_BORDER | 0x1044,7,7,302,150
+    EDITTEXT        IDC_EDIT_DATE,38,168,51,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Button1",IDC_BUTTON_NEXT,94,164,25,18,BS_ICON
+    PUSHBUTTON      "Button2",IDC_BUTTON_PREV,7,164,25,18,BS_ICON
+    PUSHBUTTON      "Arbeitstag",IDC_BUTTON_SWITCH_WD,133,168,50,14
+END
+
+IDD_DIALOG_REPORT DIALOGEX 0, 0, 316, 184
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Bericht"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,133,163,50,14
+    EDITTEXT        IDC_EDIT_REPORT,7,7,302,151,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,1
+ PRODUCTVERSION 2,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704e4"
+        BEGIN
+            VALUE "Comments", "Zeiterfassung von Arbeitspaketen"
+            VALUE "CompanyName", "Siemens AG"
+            VALUE "FileDescription", "Zeiterfassung von Arbeitspaketen"
+            VALUE "FileVersion", "2.0.0.1"
+            VALUE "InternalName", "Zeiterfassung.exe"
+            VALUE "LegalCopyright", " (c) Uwe  Pabst. Alle Rechte vorbehalten."
+            VALUE "OriginalFilename", "Zeiterfassung.exe"
+            VALUE "ProductName", "Tätigkeitsnachweis"
+            VALUE "ProductVersion", "2.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DETAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 353
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_NOTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_DIALOG_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE-Initialisierungsfehler. Stellen Sie sicher, dass die OLE-Bibliotheken in der richtigen Version vorliegen."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Tätigkeitsnachweis\nZeiterfassung\nZeiterfassung\nZeiterfassung Files (*.tkn)\n.tkn\nZeiterfassung.Document\nZeiterfassung.Document"
+    IDR_CONVERSION          "Tätigkeitsnachweis\nKonvertierung\nKonvetierung\nZu konvertierende Files (*.tkn_old)\n.tkn_old\nKonvertierung.Document\nKonvertierung.Document"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Zeiterfassung"
+    AFX_IDS_IDLEMESSAGE     "Bereit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Erstellt ein neues Dokument.\nNeu"
+    ID_FILE_OPEN            "Öffnet ein vorhandenes Dokument.\nÖffnen"
+    ID_FILE_CLOSE           "Schließt das aktive Dokument.\nSchließen"
+    ID_FILE_SAVE            "Speichert das aktive Dokument.\nSpeichern"
+    ID_FILE_SAVE_AS         "Speichert das aktive Dokument unter einem neuem Namen.\nSpeichern unter"
+    ID_FILE_PRINT_PREVIEW   "Zeigt ganze Seiten an.\nSeitenansicht"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Zeigt Programm-, Versions- und Copyrightinformationen an.\nInfo"
+    ID_APP_EXIT             "Beendet die Anwendung und fordert zum Speichern der Dokumente auf.\nBeenden"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE2       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE3       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE4       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE5       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE6       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE7       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE8       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE9       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE10      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE11      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE12      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE13      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE14      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE15      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE16      "Öffnet das Dokument."
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Wechselt zum nächsten Fensterbereich.\nNächster Bereich"
+    ID_PREV_PANE            "Wechselt zum vorherigen Fensterbereich.\nVorheriger Bereich"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Teilt das aktive Fenster in Bereiche.\nTeilen"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Löscht die Auswahl.\nLöschen"
+    ID_EDIT_CLEAR_ALL       "Löscht alles.\nAlles löschen"
+    ID_EDIT_COPY            "Kopiert die Auswahl in die Zwischenablage.\nKopieren"
+    ID_EDIT_CUT             "Überträgt die Auswahl in die Zwischenablage.\nAusschneiden"
+    ID_EDIT_FIND            "Sucht den angegebenen Text.\nSuchen"
+    ID_EDIT_PASTE           "Fügt den Inhalt der Zwischenablage ein.\nEinfügen"
+    ID_EDIT_REPEAT          "Wiederholt den letzten Vorgang.\nWiederholen"
+    ID_EDIT_REPLACE         "Ersetzt den angegebenen Text.\nErsetzen"
+    ID_EDIT_SELECT_ALL      "Markiert das gesamte Dokument.\nAlles auswählen"
+    ID_EDIT_UNDO            "Macht den letzten Vorgang rückgängig.\nRückgängig"
+    ID_EDIT_REDO            "Wiederholt den zuletzt rückgängig gemachten Vorgang.\nWiederherstellen"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Blendet die Symbolleiste ein oder aus.\nSymbolleiste"
+    ID_VIEW_STATUS_BAR      "Blendet die Statusleiste ein oder aus.\nStatusleiste"
+    ID_VIEW_AUTOARRANGE     "Symbole am Raster ausrichten."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Ändert die Fenstergröße."
+    AFX_IDS_SCMOVE          "Ändert die Position des Fensters."
+    AFX_IDS_SCMINIMIZE      "Minimiert das Fenster."
+    AFX_IDS_SCMAXIMIZE      "Maximiert das Fenster."
+    AFX_IDS_SCNEXTWINDOW    "Wechselt zum nächsten Dokumentfenster."
+    AFX_IDS_SCPREVWINDOW    "Wechselt zum vorherigen Dokumentfenster."
+    AFX_IDS_SCCLOSE         "Schließt das aktive Fenster und fordert zum Speichern des Dokuments auf."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Stellt die ursprüngliche Fenstergröße wieder her."
+    AFX_IDS_SCTASKLIST      "Aktiviert die Taskliste."
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_SMALLICON       "Zeigt Elemente mit kleinen Symbolen an.\nKleine Symbole"
+    ID_VIEW_LARGEICON       "Zeigt Elemente mit großen Symbolen an.\nGroße Symbole"
+    ID_VIEW_LIST            "Zeigt Elemente als Liste an.\nListe"
+    ID_VIEW_DETAILS         "Zeigt Informationen über jedes Element im Fenster an.\nDetails"
+    ID_VIEW_LINEUP          "Richtet die Symbole am Raster aus."
+    ID_VIEW_BYNAME          "Sortiert die Symbole alphabetisch."
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#include "res\Zeiterfassung.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.DEU\afxres.rc"          // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
