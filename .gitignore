@@ -7,3 +7,13 @@
 /TeeUhr/.vs/TeeUhr/v15
 /TeeUhr/bin/Debug
 /TeeUhr/obj/Debug
+/DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.exe
+/DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.exe.config
+/DisplayIntTestStatistics/DisplayIntTestStatistics/bin/Release/DisplayIntTestStatistics.pdb
+/CopyrightCorrection/.vs/CopyrightCorrection/v15
+/CopyrightCorrection/CopyrightCorrection/bin/Debug
+/CopyrightCorrection/CopyrightCorrection/obj/Debug
+*.txt
+/RegisterWebserver/.vs/RegisterWebserver/v15
+/RegisterWebserver/RegisterWebserver/bin/Debug
+/RegisterWebserver/RegisterWebserver/obj/Debug

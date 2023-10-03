@@ -25,8 +25,8 @@ namespace DisplayIntTestStatistics
         private string[] buildNumbers = null;
         private static string folderRootLocal = @"D:\Jenkins_Home\workspace\PCStation\";
         private static string folderRootRemote = @"\\md2fmd5c\Jenkins_Home\workspace\PCStation\";
-        private static string ptrFolderLocal = @"D:\IntegrationTestExecution\PTRProjects\Projects\PCStationIntegrationTest";
-        private static string ptrFolderRemote = @"\\md2fmd5c\IntegrationTestExecution\PTRProjects\Projects\PCStationIntegrationTest";
+        private static string ptrFolderLocal = @"D:\IntegrationTestExecution\PTRProjects\Projects";
+        private static string ptrFolderRemote = @"\\md2fmd5c\IntegrationTestExecution\PTRProjects\Projects";
         private string folderRoot = folderRootRemote;
         private string selectedFolder = "";
         private int numberTestFiles = 100;
@@ -42,13 +42,11 @@ namespace DisplayIntTestStatistics
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            lbLivetests.Items.Add("RT_DB_Job_Test1_Live");
-            lbLivetests.Items.Add("RT_Merge_Job3_Tests2_Live");
-            lbLivetests.Items.Add("RT_ST_Job_Test1_Live");
+            lbLivetests.Items.Add("Merge-JobLivetest");
+            lbLivetests.Items.Add("Setup-JobLivetest");
 
-            lbAcceptance.Items.Add("RT_DB_Job_Test2_Acceptance");
-            lbAcceptance.Items.Add("RT_Merge_Job4_Tests3_Merge");
-            lbAcceptance.Items.Add("RT_ST_Job_Test2_Acceptance");
+            lbAcceptance.Items.Add("Merge-JobAcceptancetest");
+            lbAcceptance.Items.Add("Setup-JobAcceptancetest");
 
             watcher.Created += OnCreated;
         }

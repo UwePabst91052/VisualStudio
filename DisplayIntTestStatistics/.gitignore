@@ -1,0 +1,9 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/DisplayIntTestStatistics/obj/Release
+/.vs
+/DisplayIntTestStatistics/.vs/DisplayIntTestStatistics/v15
+/DisplayIntTestStatistics/bin/Debug
+/DisplayIntTestStatistics/obj/Debug
