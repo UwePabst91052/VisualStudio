@@ -1,0 +1,53 @@
+// MFCActiveXControl1.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (MFCActiveXControl1.tlb) that will become a resource in
+// MFCActiveXControl1.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(CD0E8D21-D5B7-4574-AF1C-6D05FDEB56B8), version(1.0),
+  control ]
+library MFCActiveXControl1Lib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CCDWuerfelCtrl
+	[ 
+		uuid(128B1BE4-F9BF-4BF4-B911-F228327A5B64)	
+	]
+	dispinterface _DMFCActiveXControl1
+	{
+		properties:
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(DISPID_FORECOLOR)] OLE_COLOR ForeColor;
+	methods:
+			[id(1)] void WuerfleZahl(void);
+	};
+
+	//  Event dispatch interface for CCDWuerfelCtrl
+
+	[ 
+		uuid(8CB960EB-3788-4DF0-9E15-07ECA0BA75D5)	
+	]
+	dispinterface _DMFCActiveXControl1Events
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(1)] void HabeGewuerfelt(LONG zahl);
+	};
+
+	//  Class information for CCDWuerfelCtrl
+	[
+		uuid(046DEA3C-55C0-4C75-829E-94C55105F3B3)
+	]
+	coclass MFCActiveXControl1
+	{
+		[default] dispinterface _DMFCActiveXControl1;
+		[default, source] dispinterface _DMFCActiveXControl1Events;
+	};
+
+};
