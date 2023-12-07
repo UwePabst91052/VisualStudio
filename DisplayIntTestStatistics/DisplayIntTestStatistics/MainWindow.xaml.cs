@@ -26,13 +26,23 @@ namespace DisplayIntTestStatistics
     {
         private TargetResults[] targetResults = new TargetResults[3];
         private PtrResultContent ptrResultContent = null;
-        private UnittestResults unittestResults = null;
         private BackgroundWorker collectThread = new BackgroundWorker();
         private int numberFilesScanned = 0;
         private FileSystemWatcher watcher = new FileSystemWatcher();
         private bool isObservationOn = false;
         private int maxNumberFiles = 0;
-
+        private static string ptrFolderLocal = @"D:\IntegrationTestExecution\PTRProjects\Projects\";
+        private static string ptrFolderRemote = @"\\md2fmd5c\IntegrationTestExecution\PTRProjects\Projects\";
+        private static string templateXml = "<?xml version=\"1.0\"?>" +
+            "<GroupProject xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
+                "<Version>1</Version>" +
+                "<TargetDependencies />" +
+                "<TestRoot>D:\\IntegrationTestExecution\\TestFiles</TestRoot>" +
+                "<StartupPriorityActivated>false</StartupPriorityActivated>" +
+                "<IsFolderOnlyProject>false</IsFolderOnlyProject>" +
+                "<ProcessorGroups>" +
+                "</ProcessorGroups>" +
+            "</GroupProject>";
         public MainWindow()
         {
             InitializeComponent();
@@ -143,12 +153,45 @@ namespace DisplayIntTestStatistics
             int numberFailedTests = 0;
             foreach (string target in ptrResultContent.TargetList)
             {
-                numberFailedTests += ptrResultContent.FillStatistic(target,
-                    targetResults[index].tbTarget, targetResults[index].tbNumber,
-                    targetResults[index].tbSum, targetResults[index].lbFiles);
-                index++;
+                if (index <= 2)
+                {
+                    numberFailedTests += ptrResultContent.FillStatistic(target,
+                        targetResults[index].tbTarget, targetResults[index].tbNumber,
+                        targetResults[index].tbSum, targetResults[index].lbFiles);
+                    index++;
+                }
             }
             return numberFailedTests;
+        }
+
+        private void ExportFailedTests()
+        {
+            int index = 0;
+            string ptrProjectFilename = "AcceptanceTest_repeat.proj.xml";
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.LoadXml(templateXml);
+            XmlDocument xmlDocumentTarget = null;
+            bool remote = tbTestResultsPath.Text.Contains("md2fmd5c");
+            foreach (string target in ptrResultContent.TargetList)
+            {
+                bool allPassed = ptrResultContent.ExportFailedTests(target, remote, out xmlDocumentTarget);
+                if (!allPassed)
+                {
+                    XmlNode processorGroupSource = xmlDocument.ImportNode(xmlDocumentTarget.GetElementsByTagName("ProcessorGroups")[0], true);
+                    processorGroupSource.FirstChild.Attributes["Name"].Value = index.ToString();
+                    xmlDocument.GetElementsByTagName("ProcessorGroups")[0].AppendChild(processorGroupSource);
+                }
+                index++;
+            }
+            if (remote)
+            {
+                ptrProjectFilename = ptrFolderRemote + ptrProjectFilename;
+            }
+            else
+            {
+                ptrProjectFilename = ptrFolderLocal + ptrProjectFilename;
+            }
+            xmlDocument.Save(ptrProjectFilename);
         }
 
         private void UpdateStatus(string text)
@@ -246,6 +289,14 @@ namespace DisplayIntTestStatistics
             windowUnittests.ResultPath = tbTestResultsPath.Text + @"\Unittests";
             windowUnittests.ShowDialog();
         }
+
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            if (ptrResultContent != null)
+            {
+                ExportFailedTests();
+            }
+        }
     }
 
     internal class PtrResultContent
@@ -272,6 +323,48 @@ namespace DisplayIntTestStatistics
             {
                 return resultTargets.Keys;
             }
+        }
+
+        private string GetTargetXmlTemplate(string target)
+        {
+            string headPart =
+                "<?xml version=\"1.0\"?>" +
+                "<GroupProject xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
+                  "<Version>1</Version>" +
+                  "<TargetDependencies />" +
+                  "<TestRoot>D:\\IntegrationTestExecution\\TestFiles</TestRoot>" +
+                  "<StartupPriorityActivated>false</StartupPriorityActivated>" +
+                  "<IsFolderOnlyProject>false</IsFolderOnlyProject>" +
+                  "<ProcessorGroups>" +
+                    "<ProcessorGroup xsi:type=\"StaticProcessorGroup\" Name=\"0\">" +
+                      "<Testitems>" +
+                      "</Testitems>" +
+                      "<ProcessorList>";
+            string footPart =
+                      "</ProcessorList>" +
+                    "</ProcessorGroup>" +
+                  "</ProcessorGroups>" +
+                "</GroupProject>";
+            string processorET138 = "<Processor TargetId=\"58c3c472 - 7c28 - 458e-abfc - c4eb18f80735\" IsRemote=\"false\" Name=\"ET138\" StartupPriority=\"0\">192.168.2.138</Processor>";
+            string processorIPC52 = "<Processor TargetId=\"53c50cb1-44a3-4ae3-9faf-269a3ba2576d\" IsRemote=\"false\" Name=\"IPC52\" StartupPriority=\"0\">IPC52,NoneTargetConfig</Processor>";
+            string processorIPC82 = "<Processor TargetId=\"5f82799b-c146-43f2-b12a-84986fbca3d6\" IsRemote=\"false\" Name=\"IPC82\" StartupPriority=\"0\">IPC82,NoneTargetConfig</Processor>";
+
+            string xmlAssembled = headPart;
+            switch (target)
+            {
+                case "ET138":
+                    xmlAssembled += processorET138;
+                    break;
+                case "IPC52":
+                    xmlAssembled += processorIPC52;
+                    break;
+                case "IPC82":
+                    xmlAssembled += processorIPC82;
+                    break;
+                default:
+                    break;
+            }
+            return (xmlAssembled + footPart);
         }
 
         public void CollectResultContent(string resultXmlFile)
@@ -332,6 +425,9 @@ namespace DisplayIntTestStatistics
                         break;
                     case "LogFilePath":
                         detail.LogFile = xmlNode.NextSibling.InnerText;
+                        break;
+                    case "FullPath":
+                        detail.TestFile = xmlNode.NextSibling.InnerText;
                         break;
                     default:
                         break;
@@ -425,6 +521,53 @@ namespace DisplayIntTestStatistics
             logFileUrl = logFileUrl.Replace("result", "html");
             return logFileUrl;
         }
+        internal bool ExportFailedTests(string target, bool remote, out XmlDocument xmlDocumentTarget)
+        {
+            bool allPassed = true;
+            int countFailed = 0;
+            XmlDocument xmlPtrProject = new XmlDocument();
+            List<string> testFileList = new List<string>();
+            xmlPtrProject.LoadXml(GetTargetXmlTemplate(target));
+            if (resultTargets.TryGetValue(target, out List<PtrResultDetail> value))
+            {
+                foreach (var detail in value)
+                {
+                    if (detail.Result != "Passed")
+                    {
+                        string testFilePath = detail.TestFile;
+                        if (!testFileList.Contains(testFilePath))
+                        {
+                            testFileList.Add(testFilePath);
+                        }
+                        countFailed++;
+                    }
+                }
+                allPassed = countFailed == 0;
+            }
+            foreach (string testFilePath in testFileList)
+            {
+                WritePtrProjectXml(xmlPtrProject, testFilePath);
+            }
+            xmlDocumentTarget = xmlPtrProject;
+            return allPassed;
+        }
+
+        private void WritePtrProjectXml(XmlDocument xmlPtrProject, string testFilePath)
+        {
+            XmlNodeList testItems = xmlPtrProject.GetElementsByTagName("Testitems");
+            XmlNode parentNode = testItems.Item(0);
+            XmlNode testItem = xmlPtrProject.CreateElement("Testitem");
+            XmlAttribute relPath = xmlPtrProject.CreateAttribute("RelPath");
+            relPath.Value = testFilePath;
+            testItem.Attributes.Append(relPath);
+            XmlAttribute selected = xmlPtrProject.CreateAttribute("Selected");
+            selected.Value = "true";
+            testItem.Attributes.Append(selected);
+            XmlAttribute dependency = xmlPtrProject.CreateAttribute("IsDependencyRelevant");
+            dependency.Value = "false";
+            testItem.Attributes.Append(dependency);
+            parentNode.AppendChild(testItem);
+        }
     }
 
     internal class PtrResultDetail
@@ -434,6 +577,7 @@ namespace DisplayIntTestStatistics
         public string Folder { get; set; }
         public string Target { get; set; }
         public string LogFile { get; set; }
+        public string TestFile { get; set; }
 
         public PtrResultDetail()
         {
