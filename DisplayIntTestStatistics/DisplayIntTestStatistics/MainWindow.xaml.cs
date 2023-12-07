@@ -295,6 +295,7 @@ namespace DisplayIntTestStatistics
             if (ptrResultContent != null)
             {
                 ExportFailedTests();
+                MessageBox.Show("Export finished");
             }
         }
     }
