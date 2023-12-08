@@ -90,6 +90,7 @@ namespace DisplayIntTestStatistics
             pbCollectData.Maximum = maxNumberFiles;
             pbCollectData.Value = 0;
             collectThread.RunWorkerAsync(resultFiles);
+            Dispatcher.Invoke(() => ResetTargetResults());
         }
 
         private void OnBtnObserveClicked(object sender, RoutedEventArgs e)
@@ -164,23 +165,22 @@ namespace DisplayIntTestStatistics
             return numberFailedTests;
         }
 
-        private void ExportFailedTests()
+        private void ExportFailedTests(Dictionary<string, int> listResults)
         {
             int index = 0;
-            string ptrProjectFilename = "AcceptanceTest_repeat.proj.xml";
+            string ptrProjectFilename = GetPtrFileProjectFilename(tbTestResultsPath.Text);
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(templateXml);
             XmlDocument xmlDocumentTarget = null;
             bool remote = tbTestResultsPath.Text.Contains("md2fmd5c");
             foreach (string target in ptrResultContent.TargetList)
             {
-                bool allPassed = ptrResultContent.ExportFailedTests(target, remote, out xmlDocumentTarget);
-                if (!allPassed)
-                {
-                    XmlNode processorGroupSource = xmlDocument.ImportNode(xmlDocumentTarget.GetElementsByTagName("ProcessorGroups")[0], true);
-                    processorGroupSource.FirstChild.Attributes["Name"].Value = index.ToString();
-                    xmlDocument.GetElementsByTagName("ProcessorGroups")[0].AppendChild(processorGroupSource);
-                }
+                int numberFailed = ptrResultContent.ExportFailedTests(target, remote, out xmlDocumentTarget);
+                XmlNode processorGroupSource = xmlDocument.ImportNode(xmlDocumentTarget.GetElementsByTagName("ProcessorGroups")[0], true);
+                processorGroupSource = processorGroupSource.FirstChild;
+                processorGroupSource.Attributes["Name"].Value = index.ToString();
+                xmlDocument.GetElementsByTagName("ProcessorGroups")[0].AppendChild(processorGroupSource);
+                listResults.Add(target, numberFailed);
                 index++;
             }
             if (remote)
@@ -292,11 +292,54 @@ namespace DisplayIntTestStatistics
 
         private void BtnExport_Click(object sender, RoutedEventArgs e)
         {
+            Dictionary<string, int> listResults = new Dictionary<string, int>();
+            string message = "Number of exported testcases:\n";
             if (ptrResultContent != null)
             {
-                ExportFailedTests();
-                MessageBox.Show("Export finished");
+                ExportFailedTests(listResults);
+                foreach (var entry in listResults)
+                {
+                    message += string.Format("\nfor {0}:\t{1} failed tests", entry.Key, entry.Value);
+                }
+                if (listResults.Count > 0)
+                {
+                    MessageBox.Show(message);
+                }
+                else
+                {
+                    MessageBox.Show("No failed testcases found");
+                }
             }
+        }
+
+        private string GetPtrFileProjectFilename(string text)
+        {
+            string filename = "";
+            char[] seperators = new char[] { '\\' };
+            string[] subs = tbTestResultsPath.Text.Split(seperators, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < subs.Length; i++)
+            {
+                if (subs[i].Contains("Job"))
+                {
+                    switch (subs[i])
+                    {
+                        case "Setup-JobAcceptancetest":
+                            filename = "AcceptanceTest";
+                            break;
+                        case "Merge-JobAcceptancetest":
+                            filename = "MergeTest";
+                            break;
+                        case "Setup-JobLivetest":
+                        case "Merge-JobLivetest":
+                            filename = "LiveTest";
+                            break;
+                        default:
+                            filename = "unknown";
+                            break;
+                    }
+                }
+            }
+            return filename + "_repeat.proj.xml";
         }
     }
 
@@ -349,7 +392,7 @@ namespace DisplayIntTestStatistics
             string processorET138 = "<Processor TargetId=\"58c3c472 - 7c28 - 458e-abfc - c4eb18f80735\" IsRemote=\"false\" Name=\"ET138\" StartupPriority=\"0\">192.168.2.138</Processor>";
             string processorIPC52 = "<Processor TargetId=\"53c50cb1-44a3-4ae3-9faf-269a3ba2576d\" IsRemote=\"false\" Name=\"IPC52\" StartupPriority=\"0\">IPC52,NoneTargetConfig</Processor>";
             string processorIPC82 = "<Processor TargetId=\"5f82799b-c146-43f2-b12a-84986fbca3d6\" IsRemote=\"false\" Name=\"IPC82\" StartupPriority=\"0\">IPC82,NoneTargetConfig</Processor>";
-
+            string processorET103 = "<Processor TargetId=\"560df8b3-1a5f-49b9-8732-50c5d622046e\" IsRemote=\"false\" Name=\"ET103\" StartupPriority=\"0\">192.168.2.103</Processor>";
             string xmlAssembled = headPart;
             switch (target)
             {
@@ -361,6 +404,9 @@ namespace DisplayIntTestStatistics
                     break;
                 case "IPC82":
                     xmlAssembled += processorIPC82;
+                    break;
+                case "ET103":
+                    xmlAssembled += processorET103;
                     break;
                 default:
                     break;
@@ -522,9 +568,8 @@ namespace DisplayIntTestStatistics
             logFileUrl = logFileUrl.Replace("result", "html");
             return logFileUrl;
         }
-        internal bool ExportFailedTests(string target, bool remote, out XmlDocument xmlDocumentTarget)
+        internal int ExportFailedTests(string target, bool remote, out XmlDocument xmlDocumentTarget)
         {
-            bool allPassed = true;
             int countFailed = 0;
             XmlDocument xmlPtrProject = new XmlDocument();
             List<string> testFileList = new List<string>();
@@ -540,17 +585,27 @@ namespace DisplayIntTestStatistics
                         {
                             testFileList.Add(testFilePath);
                         }
-                        countFailed++;
                     }
                 }
-                allPassed = countFailed == 0;
+                foreach (var detail in value)
+                {
+                    if (detail.Result == "Passed")
+                    {
+                        string testFilePath = detail.TestFile;
+                        if (testFileList.Contains(testFilePath))
+                        {
+                            testFileList.Remove(testFilePath);
+                        }
+                    }
+                }
+                countFailed = testFileList.Count;
             }
             foreach (string testFilePath in testFileList)
             {
                 WritePtrProjectXml(xmlPtrProject, testFilePath);
             }
             xmlDocumentTarget = xmlPtrProject;
-            return allPassed;
+            return countFailed;
         }
 
         private void WritePtrProjectXml(XmlDocument xmlPtrProject, string testFilePath)
