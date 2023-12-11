@@ -389,7 +389,7 @@ namespace DisplayIntTestStatistics
                     "</ProcessorGroup>" +
                   "</ProcessorGroups>" +
                 "</GroupProject>";
-            string processorET138 = "<Processor TargetId=\"58c3c472 - 7c28 - 458e-abfc - c4eb18f80735\" IsRemote=\"false\" Name=\"ET138\" StartupPriority=\"0\">192.168.2.138</Processor>";
+            string processorET138 = "<Processor TargetId=\"58c3c472-7c28-458e-abfc-c4eb18f80735\" IsRemote=\"false\" Name=\"ET138\" StartupPriority=\"0\">192.168.2.138</Processor>";
             string processorIPC52 = "<Processor TargetId=\"53c50cb1-44a3-4ae3-9faf-269a3ba2576d\" IsRemote=\"false\" Name=\"IPC52\" StartupPriority=\"0\">IPC52,NoneTargetConfig</Processor>";
             string processorIPC82 = "<Processor TargetId=\"5f82799b-c146-43f2-b12a-84986fbca3d6\" IsRemote=\"false\" Name=\"IPC82\" StartupPriority=\"0\">IPC82,NoneTargetConfig</Processor>";
             string processorET103 = "<Processor TargetId=\"560df8b3-1a5f-49b9-8732-50c5d622046e\" IsRemote=\"false\" Name=\"ET103\" StartupPriority=\"0\">192.168.2.103</Processor>";
