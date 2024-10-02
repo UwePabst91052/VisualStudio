@@ -23,10 +23,10 @@ namespace DisplayIntTestStatistics
     public partial class Window1 : Window
     {
         private string[] buildNumbers = null;
-        private static string folderRootLocal = @"D:\Jenkins_Home\workspace\PCStation\";
-        private static string folderRootRemote = @"\\md2fmd5c\Jenkins_Home\workspace\PCStation\";
-        private static string ptrFolderLocal = @"D:\IntegrationTestExecution\PTRProjects\Projects\PCStationIntegrationTest";
-        private static string ptrFolderRemote = @"\\md2fmd5c\IntegrationTestExecution\PTRProjects\Projects\PCStationIntegrationTest";
+        private static string folderRootLocal = @"D:\PostMerge\workspace\";
+        private static string folderRootRemote = @"\\194.138.158.199\PostMerge\workspace\";
+        private static string ptrFolderLocal = @"D:\git\s7p\main\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderRemote = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private string folderRoot = folderRootRemote;
         private string selectedFolder = "";
         private int numberTestFiles = 100;
@@ -42,13 +42,8 @@ namespace DisplayIntTestStatistics
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            lbLivetests.Items.Add("RT_DB_Job_Test1_Live");
-            lbLivetests.Items.Add("RT_Merge_Job3_Tests2_Live");
-            lbLivetests.Items.Add("RT_ST_Job_Test1_Live");
-
-            lbAcceptance.Items.Add("RT_DB_Job_Test2_Acceptance");
-            lbAcceptance.Items.Add("RT_Merge_Job4_Tests3_Merge");
-            lbAcceptance.Items.Add("RT_ST_Job_Test2_Acceptance");
+            lbPostmergeTests.Items.Add("TargetSetup");
+            lbPostmergeTests.Items.Add("TestSuite");
 
             watcher.Created += OnCreated;
         }
@@ -106,7 +101,7 @@ namespace DisplayIntTestStatistics
             labelSelectedFolder.Content = selectedFolder;
         }
 
-        private void LbTestType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LbPostmergeTests_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count == 0)
             {
@@ -116,8 +111,7 @@ namespace DisplayIntTestStatistics
             string testType = (string)e.AddedItems[0];
             if (testType != "")
             {
-                selectedFolder = folderRoot + testType;
-                buildNumbers = Directory.GetDirectories(selectedFolder);
+                buildNumbers = Directory.GetDirectories(folderRoot);
             }
 
             if ((bool)cbWaitFolder.IsChecked)
@@ -125,6 +119,7 @@ namespace DisplayIntTestStatistics
                 ActivateFolderWatch(testType);
             }
 
+            selectedFolder = testType;
             lbBuildNumbers.Items.Clear();
             if (null != buildNumbers)
             {
@@ -135,7 +130,7 @@ namespace DisplayIntTestStatistics
                     string[] sub = item.Split('\\');
                     if (int.TryParse(sub[sub.Length - 1], out buildNumber))
                     {
-                        lbBuildNumbers.Items.Add(sub[sub.Length - 2] + "\\" + sub[sub.Length - 1]);
+                        lbBuildNumbers.Items.Add(sub[sub.Length - 1] + "\\" + selectedFolder);
                     }
                 }
             }
@@ -148,13 +143,9 @@ namespace DisplayIntTestStatistics
         private void CbWaitFolder_Checked(object sender, RoutedEventArgs e)
         {
             string testType = "";
-            if (lbLivetests.SelectedIndex >= 0)
+            if (lbPostmergeTests.SelectedIndex >= 0)
             {
-                testType = lbLivetests.SelectedItem as string;
-            }
-            else if (lbAcceptance.SelectedIndex >= 0)
-            {
-                testType = lbAcceptance.SelectedItem as string;
+                testType = lbPostmergeTests.SelectedItem as string;
             }
             else return;
 

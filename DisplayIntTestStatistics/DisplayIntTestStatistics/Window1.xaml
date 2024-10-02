@@ -7,20 +7,22 @@
         mc:Ignorable="d"
         Title="Select Logfile Folder" Height="426.106" Width="512.279" Background="#FFDADADA" ContentRendered="Window_ContentRendered">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="301*"/>
+            <RowDefinition Height="94*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="27*"/>
             <ColumnDefinition Width="29*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="lbBuildNumbers" Grid.Column="1" HorizontalAlignment="Left" Height="306" Margin="10,40,0,0" VerticalAlignment="Top" Width="241" SelectionChanged="LbBuildNumbers_SelectionChanged"/>
-        <Label x:Name="labelSelectedFolder" Content="" HorizontalAlignment="Left" Margin="10,359,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="484" BorderBrush="Black"/>
-        <Label x:Name="label" Content="Livetests" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbLivetests" HorizontalAlignment="Left" Height="81" Margin="10,40,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbTestType_SelectionChanged"/>
-        <Label x:Name="label_Copy" Content="Acceptancetests" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbAcceptance" HorizontalAlignment="Left" Height="81" Margin="10,161,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbTestType_SelectionChanged"/>
+        <ListBox x:Name="lbBuildNumbers" Grid.Column="1" HorizontalAlignment="Left" Height="306" Margin="10,40,0,0" VerticalAlignment="Top" Width="241" SelectionChanged="LbBuildNumbers_SelectionChanged" Grid.RowSpan="2"/>
+        <Label x:Name="labelSelectedFolder" Content="" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="484" BorderBrush="Black" Grid.Row="1"/>
+        <Label x:Name="label" Content="Postmerge tests" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbPostmergeTests" HorizontalAlignment="Left" Height="105" Margin="10,66,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbPostmergeTests_SelectionChanged"/>
         <CheckBox x:Name="cbWaitFolder" Content="Wait for new folder" Grid.Column="1" HorizontalAlignment="Left" Margin="72,10,0,0" VerticalAlignment="Top" Checked="CbWaitFolder_Checked"/>
-        <Label x:Name="label1" Content="Select PTR project" HorizontalAlignment="Left" Margin="10,253,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbPtrProjects" HorizontalAlignment="Left" Height="101" Margin="10,284,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbPtrProjects_SelectionChanged"/>
-        <Label x:Name="labelNumberFiles" Content="" HorizontalAlignment="Left" Margin="120,253,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="label1" Content="Select PTR project" HorizontalAlignment="Left" Margin="10,187,0,88"/>
+        <ListBox x:Name="lbPtrProjects" HorizontalAlignment="Left" Height="101" Margin="10,218,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbPtrProjects_SelectionChanged" Grid.RowSpan="2"/>
+        <Label x:Name="labelNumberFiles" Content="" HorizontalAlignment="Left" Margin="120,24,0,0" VerticalAlignment="Top" Width="113" Grid.Row="1"/>
         <RadioButton x:Name="rbRemote" Content="Remote" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" GroupName="groupLogfileLocation" Checked="GroupLogfileLocation_Checked"/>
         <RadioButton x:Name="rbLocal" Content="local" HorizontalAlignment="Left" Margin="174,10,0,0" VerticalAlignment="Top" GroupName="groupLogfileLocation" IsChecked="True" Checked="GroupLogfileLocation_Checked"/>
 
