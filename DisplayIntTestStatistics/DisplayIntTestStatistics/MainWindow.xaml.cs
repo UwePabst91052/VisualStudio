@@ -26,7 +26,6 @@ namespace DisplayIntTestStatistics
     {
         private TargetResults[] targetResults = new TargetResults[3];
         private PtrResultContent ptrResultContent = null;
-        private UnittestResults unittestResults = null;
         private BackgroundWorker collectThread = new BackgroundWorker();
         private int numberFilesScanned = 0;
         private FileSystemWatcher watcher = new FileSystemWatcher();
@@ -182,7 +181,7 @@ namespace DisplayIntTestStatistics
             ptrResultContent.CollectResultContent(e.FullPath);
             Dispatcher.Invoke(() => ResetTargetResults());
             int numberFailedTests = Dispatcher.Invoke(() => UpdateStatistics());
-            string statusText = string.Format("{0} files from {1} scanned", ++numberFilesScanned, maxNumberFiles + numberFailedTests);
+            string statusText = string.Format("{0} files from {1} scanned", ++numberFilesScanned, maxNumberFiles);
             Dispatcher.Invoke(() => pbCollectData.Maximum = maxNumberFiles + numberFailedTests);
             Dispatcher.Invoke(() => pbCollectData.Value = numberFilesScanned);
             Dispatcher.Invoke(() => UpdateStatus(statusText));

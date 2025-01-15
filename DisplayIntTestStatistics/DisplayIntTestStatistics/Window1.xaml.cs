@@ -25,7 +25,7 @@ namespace DisplayIntTestStatistics
         private string[] buildNumbers = null;
         private static string folderRootLocal = @"D:\PostMerge\workspace\";
         private static string folderRootRemote = @"\\194.138.158.199\PostMerge\workspace\";
-        private static string ptrFolderLocal = @"D:\git\s7p\main\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderLocal = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private static string ptrFolderRemote = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private string folderRoot = folderRootRemote;
         private string selectedFolder = "";

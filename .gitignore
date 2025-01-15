@@ -3,7 +3,16 @@
 ################################################################################
 
 /TeeUhr/obj/Release
-/.vs
+/.vs/*
 /TeeUhr/.vs/TeeUhr/v15
 /TeeUhr/bin/Debug
 /TeeUhr/obj/Debug
+/CopyrightCorrection/*
+/DisplayIntTestStatistic/.vs/*
+DisplayIntTestStatistics/DisplayIntTestStatistics/bin/*
+DisplayIntTestStatistics/DisplayIntTestStatistics/obj/*
+*.csproj.*
+RegisterWebServer/RegisterWebServer/bin/*
+RegisterWebServer/RegisterWebServer/obj/*
+RegisterWebServer/.vs/*
+DisplayIntTestStatistics/.vs/*
