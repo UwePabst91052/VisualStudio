@@ -123,6 +123,10 @@ public:
     {
         return m_wpckg_text;
     }
+    void SetWpText(CString& text)
+    {
+        m_wpckg_text = text;
+    }
     CWorkday* getWorkday(CTime& date);
     bool HasWorkpackageDate(CTime& date);
 private:
@@ -144,4 +148,7 @@ public:
     CWorkday* getNextWorkday(CTime& date);
     CWorkday* getPrevWorkday(CTime& date);
 	void serializeXml(CArchive& ar, CXmlDocument& doc);
+    static bool CompareCWorkday(CWorkday*& workday1, CWorkday*& workday2);
+    // sort the list of workday depentend on the date
+    void SortWorkdays();
 };

@@ -265,6 +265,7 @@ BEGIN
     PUSHBUTTON      "Notiz",IDC_BUTTON_NOTE,263,136,50,14
     PUSHBUTTON      "Löschen",IDC_BUTTON_DEL_WT,263,154,50,14
     PUSHBUTTON      "erster Tag",IDC_BUTTON2,111,63,50,14
+    PUSHBUTTON      "Ändern",IDC_BTN_CHANGE,303,14,50,14
 END
 
 IDD_NOTE DIALOGEX 0, 0, 316, 189
@@ -372,6 +373,17 @@ BEGIN
     END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DETAILS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by Zeiterfassung.rc
+// Von Microsoft Visual C++ generierte Includedatei.
+// Verwendet durch Zeiterfassung.rc
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_OLE_INIT_FAILED             100
@@ -36,6 +36,7 @@
 #define IDC_BUTTON_PREV                 1023
 #define IDC_BUTTON_SWITCH_WD            1024
 #define IDC_EDIT_REPORT                 1025
+#define IDC_BTN_CHANGE                  1026
 #define ID_DATEI_SEITENANSICHT          32771
 #define ID_DATEI_KONVERTIEREN           32772
 #define ID_BEARBEITEN_L32776            32776
@@ -46,9 +47,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        136
+#define _APS_NEXT_RESOURCE_VALUE        137
 #define _APS_NEXT_COMMAND_VALUE         32779
-#define _APS_NEXT_CONTROL_VALUE         1026
+#define _APS_NEXT_CONTROL_VALUE         1027
 #define _APS_NEXT_SYMED_VALUE           104
 #endif
 #endif

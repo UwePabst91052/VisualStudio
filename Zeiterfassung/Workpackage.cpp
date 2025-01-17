@@ -1,6 +1,11 @@
 // Workpackage.cpp
 
 #include "stdafx.h"
+#include <afx.h>
+#include <afxtempl.h>
+#include <vector>
+#include <algorithm>
+
 #include "Zeiterfassung.h"
 
 #include "Workpackage.h"
@@ -659,6 +664,13 @@ CTime& CWorkpackage::GetDateOfDateTime(ATL::CTime &dateTime)
     return m_tmpDate;
 }
 
+bool CWorkpackage::CompareCWorkday(CWorkday *& workday1, CWorkday *& workday2)
+{
+    CString& date1 = workday1->getWdDate().Format(_T("%d.%m.%Y"));
+    CString& date2 = workday2->getWdDate().Format(_T("%d.%m.%Y"));
+    return (workday1->GetWorkdayDate() < workday2->GetWorkdayDate());
+}
+
 CString& CWorkday::getDate(void)
 {
     m_strTime = m_date.Format(_T("%d.%m.%Y"));
@@ -798,4 +810,26 @@ void CWorkpackage::serializeXml(CArchive & ar, CXmlDocument & doc)
 	}
 	doc.closeTag(CString("Workdays"));
 	doc.closeTag(CString("Workpackage"));
+}
+
+
+// sort the list of workday dependend on the date
+void CWorkpackage::SortWorkdays()
+{
+    if (m_workDays.GetCount() < 2)
+        return;
+
+    std::vector<CWorkday*> vec;
+    while (!m_workDays.IsEmpty())
+    {
+        CWorkday* workday = m_workDays.RemoveTail();
+        vec.push_back(workday);
+    }
+
+    std::sort(vec.begin(), vec.end(), CWorkpackage::CompareCWorkday);
+
+    for (const auto& workday : vec)
+    {
+        m_workDays.AddTail(workday);
+    }
 }

@@ -54,6 +54,15 @@ BOOL CZeiterfassungDoc::OnNewDocument()
 	return TRUE;
 }
 
+void CZeiterfassungDoc::ChangeWorkpackageName(HANDLE hwp, CString newName)
+{
+    SetModifiedFlag();
+    CWorkpackage* wp;
+    POSITION pos = (POSITION)hwp;
+    wp = m_workpackages.GetAt(pos);
+    wp->SetWpText(newName);
+}
+
 HANDLE CZeiterfassungDoc::AddWorkpackage(CString &text)
 {
 	SetModifiedFlag();
@@ -235,6 +244,7 @@ void CZeiterfassungDoc::StoreWorkpackagesXml(CArchive & ar)
 		while (NULL != pos)
 		{
 			wp = m_workpackages.GetNext(pos);
+            wp->SortWorkdays();
 			wp->serializeXml(ar, xmlDoc);
 		}
 	}
@@ -381,3 +391,4 @@ int CZeiterfassungDoc::GetCountWorkpackage(void)
 {
     return m_workpackages.GetCount();
 }
+

@@ -81,6 +81,7 @@ public:
     afx_msg void OnBearbeitenLoesche();
     CTimeSpan& GetWorkdaySum();
     int GetCountWorkpackage(void);
+    void ChangeWorkpackageName(HANDLE hwp, CString newName);
 };
 
 

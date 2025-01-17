@@ -30,7 +30,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnDtnCloseupDatetimepicker1(NMHDR *pNMHDR, LRESULT *pResult);
-	afx_msg void OnBnClickedButtonAdd();
+    afx_msg void OnBnClickedBtnChange();
+    afx_msg void OnBnClickedButtonAdd();
 	afx_msg void OnBnClickedButtonDelete();
 	afx_msg void OnEnChangeEditText();
 	CString   m_workpackage;
@@ -40,6 +41,7 @@ public:
     CListCtrl m_worktimeList;
 private:
 	void EnableAddButton(BOOL enable = 1);
+    void EnableChangeButton(BOOL enable = 1);
 public:
 	virtual void OnInitialUpdate();
 protected:

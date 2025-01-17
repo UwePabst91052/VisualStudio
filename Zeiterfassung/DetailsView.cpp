@@ -53,6 +53,7 @@ BEGIN_MESSAGE_MAP(CDetailsView, CFormView)
     ON_MESSAGE(WM_PREV_NOTE, OnPrevNote)
     ON_MESSAGE(WM_SWITCH_WD, OnSwitchWorkday)
     ON_COMMAND(ID_BERICHTE_TAGESBERICHT, &CDetailsView::OnBerichteTagesbericht)
+    ON_BN_CLICKED(IDC_BTN_CHANGE, &CDetailsView::OnBnClickedBtnChange)
 END_MESSAGE_MAP()
 
 
@@ -104,6 +105,15 @@ void CDetailsView::OnBnClickedButtonStartStop()
     }
 }
 
+void CDetailsView::OnBnClickedBtnChange()
+{
+    UpdateData();
+    CZeiterfassungDoc* pDoc = (CZeiterfassungDoc*)GetDocument();
+    pDoc->ChangeWorkpackageName(m_hWorkpackage, m_workpackage);
+    pDoc->UpdateAllViews(this);
+    EnableChangeButton(FALSE);
+}
+
 void CDetailsView::OnBnClickedButtonAdd()
 {
 	UpdateData();
@@ -126,12 +136,19 @@ void CDetailsView::OnBnClickedButtonDelete()
 void CDetailsView::OnEnChangeEditText()
 {
 	EnableAddButton();
+    EnableChangeButton();
 }
 
 void CDetailsView::EnableAddButton(BOOL enable)
 {
 	CWnd* pWnd = GetDlgItem(IDC_BUTTON_ADD);
 	pWnd->EnableWindow(enable);
+}
+
+void CDetailsView::EnableChangeButton(BOOL enable)
+{
+    CWnd* pWnd = GetDlgItem(IDC_BTN_CHANGE);
+    pWnd->EnableWindow(enable);
 }
 
 void CDetailsView::OnInitialUpdate()
@@ -144,6 +161,7 @@ void CDetailsView::OnInitialUpdate()
     SetDlgItemText(IDC_EDIT_DURATION, _T(""));
     m_btnStartStop.SetIcon(m_iconPause);
 	EnableAddButton(FALSE);
+    EnableChangeButton(FALSE);
 }
 
 void CDetailsView::OnUpdate(CView* pSender, LPARAM lHint, CObject* /*pHint*/)
