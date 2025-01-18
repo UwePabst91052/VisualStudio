@@ -51,6 +51,12 @@ BOOL CZeiterfassungDoc::OnNewDocument()
 
     ResetDocument();
 
+	CWnd* wnd = AfxGetMainWnd();
+	if (NULL != wnd)
+	{
+		UpdateAllViews(NULL);
+	}
+
 	return TRUE;
 }
 

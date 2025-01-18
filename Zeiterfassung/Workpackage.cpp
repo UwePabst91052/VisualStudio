@@ -353,7 +353,10 @@ void CWorkpackage::Serialize(CArchive& ar)
             if (nSchema == 1)
             {
                 ar >> wd;
-                m_workDays.AddTail(wd);
+				if (wd->getCountWorktimes() > 0)
+				{
+					m_workDays.AddTail(wd);
+				}
             }
             else
             {
@@ -426,12 +429,18 @@ void CWorkpackage::DeleteWorktimeCurrent(WorkTime_t& wt)
     POSITION pos = m_workDays.GetHeadPosition();
     while (NULL != pos)
     {
+		POSITION cur_pos = pos;
         wd = m_workDays.GetNext(pos);
         if (*wd == date)
         {
             wd->deleteWorktimeCurrent();
         }
-    }
+		if (wd->getCountWorktimes() == 0)
+		{
+			m_workDays.RemoveAt(cur_pos);
+			delete wd;
+		}
+	}
 }
 
 void CWorkpackage::ChangeWorktimeArchive(ATL::CTime &dateTime, HANDLE hwt, WorkTime_t &wt)
@@ -465,12 +474,18 @@ void CWorkpackage::DeleteWorktimeArchive(ATL::CTime &dateTime, HANDLE hwt)
     POSITION pos = m_workDays.GetHeadPosition();
     while (NULL != pos)
     {
-        wd = m_workDays.GetNext(pos);
+		POSITION cur_pos = pos;
+		wd = m_workDays.GetNext(pos);
         if (*wd == date)
         {
             wd->deleteWorktimeArchive(hwt);
         }
-    }
+		if (wd->getCountWorktimes() == 0)
+		{
+			m_workDays.RemoveAt(cur_pos);
+			delete wd;
+		}
+	}
 }
 
 void CWorkpackage::DeleteNoteOfDay(ATL::CTime &dateTime)

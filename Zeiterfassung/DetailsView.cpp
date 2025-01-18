@@ -156,12 +156,14 @@ void CDetailsView::OnInitialUpdate()
 	CFormView::OnInitialUpdate();
 
     m_worktimeList.DeleteAllItems();
+	m_workpackage = "";
     SetDlgItemText(IDC_EDIT_START, _T(""));
     SetDlgItemText(IDC_EDIT_END, _T(""));
     SetDlgItemText(IDC_EDIT_DURATION, _T(""));
     m_btnStartStop.SetIcon(m_iconPause);
 	EnableAddButton(FALSE);
     EnableChangeButton(FALSE);
+	UpdateData(FALSE);
 }
 
 void CDetailsView::OnUpdate(CView* pSender, LPARAM lHint, CObject* /*pHint*/)
