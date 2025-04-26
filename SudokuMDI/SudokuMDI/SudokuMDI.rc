@@ -1,0 +1,809 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\SudokuMDI.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.DEU\\afxres.rc""          // Standardkomponenten\r\n"
+    "#include ""l.DEU\\afxprint.rc""        // Ressourcen für Drucken/Seitenansicht\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\SudokuMDI.ico"
+
+IDR_SudokuSquareTYPE    ICON                    "res\\SudokuMDIDoc.ico"
+
+IDR_SudokuDuoTYPE       ICON                    "res\\icon1.ico"
+
+IDR_SudokuSamuraiTYPE   ICON                    "res\\ico00001.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+IDR_SudokuTYPE          BITMAP                  "res\\mainfram.bmp"
+
+IDR_MOVEBAR             BITMAP                  "res\\movebar.bmp"
+
+IDR_NAVIBAR             BITMAP                  "res\\navibar.bmp"
+
+IDB_BMP_MOUSEPAD        BITMAP                  "res\\mousepad.bmp"
+
+IDB_BMP_MOUSEPAD_ALPHA  BITMAP                  "res\\bitmap1.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_SQUARE_9X9
+    BUTTON      ID_FILE_OPEN
+    SEPARATOR
+    BUTTON      ID_FILE_SAVE
+END
+
+IDR_SudokuTYPE TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_ANSICHT_MIT_KAND
+    BUTTON      ID_AKTIONEN_SELECTPAIR
+    BUTTON      ID_AKTIONEN_SELECTTRIPLE
+    BUTTON      ID_AKTIONEN_SINGLEINFIELD
+    BUTTON      ID_AKTIONEN_SELECTSINGLE
+    BUTTON      ID_AKTIONEN_SOLVE_LEVEL1
+    BUTTON      ID_AKTIONEN_SOLVE_LEVEL2
+    SEPARATOR
+    BUTTON      ID_EDIT_MODE
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    BUTTON      ID_BEGIN_TRIAL
+    BUTTON      ID_UNDO_TRIAL
+    BUTTON      ID_EDIT_REDO_ALL
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_MOVEBAR TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_MOVE_LEFT
+    BUTTON      ID_MOVE_UP
+    BUTTON      ID_MOVE_RIGHT
+    BUTTON      ID_MOVE_DOWN
+END
+
+IDR_NAVIBAR TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_NAV_LEFT
+    BUTTON      ID_NAV_UP
+    BUTTON      ID_NAV_DOWN
+    BUTTON      ID_NAV_RIGHT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        POPUP "&Neu"
+        BEGIN
+            POPUP "Square"
+            BEGIN
+                MENUITEM "8 x 8",                       ID_SQUARE_8X8
+                MENUITEM "9 x 9",                       ID_SQUARE_9X9
+                MENUITEM "12 x 12",                     ID_SQUARE_12X12
+                MENUITEM "16 x 16",                     ID_SQUARE_16X16
+            END
+            MENUITEM "Duo",                         ID_NEU_DUO
+            MENUITEM "Samurai",                     ID_NEU_SAMURAI
+        END
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Uninstall",                  ID_DATEI_UNINSTALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Schließen",                  ID_FILE_CLOSE
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über SudokuMDI...",     ID_APP_ABOUT
+    END
+END
+
+IDR_SudokuSquareTYPE MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        POPUP "&Neu"
+        BEGIN
+            POPUP "Square"
+            BEGIN
+                MENUITEM "8 x 8",                       ID_SQUARE_8X8
+                MENUITEM "9 x 9",                       ID_SQUARE_9X9
+                MENUITEM "12 x 12",                     ID_SQUARE_12X12
+                MENUITEM "16 x 16",                     ID_SQUARE_16X16
+            END
+            MENUITEM "Duo",                         ID_NEU_DUO
+            MENUITEM "Samurai",                     ID_NEU_SAMURAI
+        END
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "&Schließen",                  ID_FILE_CLOSE
+        MENUITEM "&Speichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM "&Wiederholen\tStrg+Y",        ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Beginne Versuch",             ID_BEGIN_TRIAL
+        MENUITEM "Lösche Versuch",              ID_UNDO_TRIAL
+        MENUITEM "Einga&bemodus\tStrg+E",       ID_EDIT_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "Eigenschaften",               ID_BEARBEITEN_EIGENSCHAFTEN
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+        MENUITEM "Sudokuleiste",                ID_ANSICHT_SUDOKULEISTE
+        MENUITEM "Tastatur",                    ID_ANSICHT_MOUSEPAD
+        MENUITEM "Pfeiltasten",                 ID_ANSICHT_CURSORBAR
+        MENUITEM "Move Board",                  ID_ANSICHT_MOVEBOARD, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_ANSICHT_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "Mit Kandidaten",              ID_ANSICHT_MIT_KAND
+    END
+    POPUP "Aktionen"
+    BEGIN
+        MENUITEM "Allein im Feld",              ID_AKTIONEN_SINGLEINFIELD
+        MENUITEM "Allein im Raster",            ID_AKTIONEN_SELECTSINGLE
+        MENUITEM "Zeige Paare",                 ID_AKTIONEN_SELECTPAIR
+        MENUITEM "Zeige Triple",                ID_AKTIONEN_SELECTTRIPLE
+        MENUITEM SEPARATOR
+        MENUITEM "Löse Felder",                 ID_AKTIONEN_SOLVE_LEVEL1
+        MENUITEM "Löse Raster",                 ID_AKTIONEN_SOLVE_LEVEL2
+    END
+    POPUP "Bewegen"
+    BEGIN
+        MENUITEM "Links",                       ID_MOVE_LEFT
+        MENUITEM "Oben",                        ID_MOVE_UP
+        MENUITEM "Unten",                       ID_NAV_DOWN
+        MENUITEM "Rechts",                      ID_MOVE_RIGHT
+    END
+    POPUP "&Fenster"
+    BEGIN
+        MENUITEM "Ü&berlappend",                ID_WINDOW_CASCADE
+        MENUITEM "&Nebeneinander",              ID_WINDOW_TILE_VERT
+        MENUITEM "&Untereinander",              ID_WINDOW_TILE_HORZ
+        MENUITEM "&Symbole anordnen",           ID_WINDOW_ARRANGE
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über SudokuMDI...",     ID_APP_ABOUT
+    END
+END
+
+IDR_SudokuDuoTYPE MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        POPUP "&Neu"
+        BEGIN
+            POPUP "Square"
+            BEGIN
+                MENUITEM "8 x 8",                       ID_SQUARE_8X8
+                MENUITEM "9 x 9",                       ID_SQUARE_9X9
+                MENUITEM "12 x 12",                     ID_SQUARE_12X12
+                MENUITEM "16 x 16",                     ID_SQUARE_16X16
+            END
+            MENUITEM "Duo",                         ID_NEU_DUO
+            MENUITEM "Samurai",                     ID_NEU_SAMURAI
+        END
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "&Schließen",                  ID_FILE_CLOSE
+        MENUITEM "&Speichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM "&Wiederholen\tStrg+Y",        ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Beginne Versuch",             ID_BEGIN_TRIAL
+        MENUITEM "Lösche Versuch",              ID_UNDO_TRIAL
+        MENUITEM "Einga&bemodus\tStrg+E",       ID_EDIT_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "Eigenschaften",               ID_BEARBEITEN_EIGENSCHAFTEN
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+        MENUITEM "Sudokuleiste",                ID_ANSICHT_SUDOKULEISTE
+        MENUITEM "Tastatur",                    ID_ANSICHT_MOUSEPAD
+        MENUITEM "Pfeiltasten",                 ID_ANSICHT_CURSORBAR
+        MENUITEM "Move Board",                  ID_ANSICHT_MOVEBOARD, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_ANSICHT_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "Mit Kandidaten",              ID_ANSICHT_MIT_KAND
+    END
+    POPUP "Aktionen"
+    BEGIN
+        MENUITEM "Allein im Feld",              ID_AKTIONEN_SINGLEINFIELD
+        MENUITEM "Allein im Raster",            ID_AKTIONEN_SELECTSINGLE
+        MENUITEM "Zeige Paare",                 ID_AKTIONEN_SELECTPAIR
+        MENUITEM "Zeige Triple",                ID_AKTIONEN_SELECTTRIPLE
+        MENUITEM SEPARATOR
+        MENUITEM "Löse Felder",                 ID_AKTIONEN_SOLVE_LEVEL1
+        MENUITEM "Löse Raster",                 ID_AKTIONEN_SOLVE_LEVEL2
+    END
+    POPUP "Bewegen"
+    BEGIN
+        MENUITEM "Links",                       ID_MOVE_LEFT
+        MENUITEM "Oben",                        ID_MOVE_UP
+        MENUITEM "Unten",                       ID_NAV_DOWN
+        MENUITEM "Rechts",                      ID_MOVE_RIGHT
+    END
+    POPUP "&Fenster"
+    BEGIN
+        MENUITEM "Ü&berlappend",                ID_WINDOW_CASCADE
+        MENUITEM "&Nebeneinander",              ID_WINDOW_TILE_VERT
+        MENUITEM "&Untereinander",              ID_WINDOW_TILE_HORZ
+        MENUITEM "&Symbole anordnen",           ID_WINDOW_ARRANGE
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über SudokuMDI...",     ID_APP_ABOUT
+    END
+END
+
+IDR_SudokuSamuraiTYPE MENU
+BEGIN
+    POPUP "&Datei"
+    BEGIN
+        POPUP "&Neu"
+        BEGIN
+            POPUP "Square"
+            BEGIN
+                MENUITEM "8 x 8",                       ID_SQUARE_8X8
+                MENUITEM "9 x 9",                       ID_SQUARE_9X9
+                MENUITEM "12 x 12",                     ID_SQUARE_12X12
+                MENUITEM "16 x 16",                     ID_SQUARE_16X16
+            END
+            MENUITEM "Duo",                         ID_NEU_DUO
+            MENUITEM "Samurai",                     ID_NEU_SAMURAI
+        END
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "&Schließen",                  ID_FILE_CLOSE
+        MENUITEM "&Speichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "&Seitenansicht",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "Dru&ckeinrichtung...",        ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Rückgängig\tStrg+Z",         ID_EDIT_UNDO
+        MENUITEM "&Wiederholen\tStrg+Y",        ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Beginne Versuch",             ID_BEGIN_TRIAL
+        MENUITEM "Lösche Versuch",              ID_UNDO_TRIAL
+        MENUITEM "Einga&bemodus\tStrg+E",       ID_EDIT_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "Eigenschaften",               ID_BEARBEITEN_EIGENSCHAFTEN
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "Status&leiste",               ID_VIEW_STATUS_BAR
+        MENUITEM "Sudokuleiste",                ID_ANSICHT_SUDOKULEISTE
+        MENUITEM "Tastatur",                    ID_ANSICHT_MOUSEPAD
+        MENUITEM "Pfeiltasten",                 ID_ANSICHT_CURSORBAR
+        MENUITEM "Move Board",                  ID_ANSICHT_MOVEBOARD, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Refresh\tF5",                ID_ANSICHT_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "Mit Kandidaten",              ID_ANSICHT_MIT_KAND
+    END
+    POPUP "Aktionen"
+    BEGIN
+        MENUITEM "Allein im Feld",              ID_AKTIONEN_SINGLEINFIELD
+        MENUITEM "Allein im Raster",            ID_AKTIONEN_SELECTSINGLE
+        MENUITEM "Zeige Paare",                 ID_AKTIONEN_SELECTPAIR
+        MENUITEM "Zeige Triple",                ID_AKTIONEN_SELECTTRIPLE
+        MENUITEM SEPARATOR
+        MENUITEM "Löse Felder",                 ID_AKTIONEN_SOLVE_LEVEL1
+        MENUITEM "Löse Raster",                 ID_AKTIONEN_SOLVE_LEVEL2
+    END
+    POPUP "Bewegen"
+    BEGIN
+        MENUITEM "Links",                       ID_MOVE_LEFT
+        MENUITEM "Oben",                        ID_MOVE_UP
+        MENUITEM "Unten",                       ID_NAV_DOWN
+        MENUITEM "Rechts",                      ID_MOVE_RIGHT
+    END
+    POPUP "&Fenster"
+    BEGIN
+        MENUITEM "Ü&berlappend",                ID_WINDOW_CASCADE
+        MENUITEM "&Nebeneinander",              ID_WINDOW_TILE_VERT
+        MENUITEM "&Untereinander",              ID_WINDOW_TILE_HORZ
+        MENUITEM "&Symbole anordnen",           ID_WINDOW_ARRANGE
+    END
+    POPUP "&Hilfe"
+    BEGIN
+        MENUITEM "&Info über SudokuMDI...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "E",            ID_EDIT_MODE,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info über SudokuMDI"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,20,20
+    LTEXT           "SudokuMDI, Version 1.1",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_SUDOKUPROPERTIES DIALOGEX 0, 0, 259, 190
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "View",IDC_STATIC,7,7,121,114
+    GROUPBOX        "Print",IDC_STATIC,139,7,113,114
+    LTEXT           "Horizontal Indent",IDC_STATIC,12,19,56,8
+    EDITTEXT        IDC_EDIT_HORI_INDENT,71,18,40,12,ES_AUTOHSCROLL
+    LTEXT           "Vertical Indent",IDC_STATIC,12,36,48,8
+    EDITTEXT        IDC_EDIT_VERT_INDENT,71,35,40,12,ES_AUTOHSCROLL
+    LTEXT           "Field Size",IDC_STATIC,12,53,30,8
+    EDITTEXT        IDC_EDIT_FIELD_SIZE,71,52,40,12,ES_AUTOHSCROLL
+    LTEXT           "Candidate Length",IDC_STATIC,12,70,58,8
+    EDITTEXT        IDC_EDIT_CAND_LEN,71,69,40,12,ES_AUTOHSCROLL
+    LTEXT           "Horizontal Indent",IDC_STATIC,145,19,56,8
+    EDITTEXT        IDC_EDIT_HORI_INDENT_DP,205,18,40,12,ES_AUTOHSCROLL
+    LTEXT           "Vertical Indent",IDC_STATIC,145,35,48,8
+    EDITTEXT        IDC_EDIT_VERT_INDENT_DP,205,34,40,12,ES_AUTOHSCROLL
+    LTEXT           "Field Size",IDC_STATIC,145,51,30,8
+    EDITTEXT        IDC_EDIT_FIELD_SIZE_DP,205,50,40,12,ES_AUTOHSCROLL
+    LTEXT           "Candidate Length",IDC_STATIC,145,67,58,8
+    EDITTEXT        IDC_EDIT_CAND_LEN_DP,205,66,40,12,ES_AUTOHSCROLL
+    LTEXT           "Font Size",IDC_STATIC,146,85,30,8
+    EDITTEXT        IDC_EDIT_FONT_SIZE,205,84,40,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ALIGN,71,84,48,54,CBS_DROPDOWN | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Alignment",IDC_STATIC_LABEL,12,87,32,8,WS_DISABLED
+    CONTROL         "Alphanum",IDC_CHECK_ALPHA,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_DISABLED | WS_TABSTOP,12,102,68,10
+    LTEXT           "View Background",IDC_STATIC,14,141,55,8
+    PUSHBUTTON      "Change...",IDC_BUTTON_COLOR_VIEW,130,138,41,14
+    PUSHBUTTON      "Change...",IDC_BUTTON_COLOR_SCORE,129,157,44,14
+    CONTROL         "",IDC_STATIC_VIEW_COLOR,"Static",SS_OWNERDRAW,80,139,34,12
+    CONTROL         "",IDC_STATIC_SCORE_COLOR2,"Static",SS_OWNERDRAW,80,158,34,12
+    GROUPBOX        "Choose Color",IDC_STATIC,7,124,245,58
+    LTEXT           "Score Background",IDC_STATIC,14,161,58,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,0
+ PRODUCTVERSION 1,1,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704e4"
+        BEGIN
+            VALUE "CompanyName", "Privat"
+            VALUE "FileDescription", "Sudoku Lösungshilfe"
+            VALUE "FileVersion", "1.1.0.0"
+            VALUE "InternalName", "SudokuMDI.exe"
+            VALUE "LegalCopyright", " (c) Uwe Pabst. Alle Rechte vorbehalten."
+            VALUE "OriginalFilename", "SudokuMDI.exe"
+            VALUE "ProductName", "SUDOKU"
+            VALUE "ProductVersion", "1.1.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_SUDOKUPROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 183
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SUDOKUPROPERTIES AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE-Initialisierungsfehler. Stellen Sie sicher, dass die OLE-Bibliotheken in der richtigen Version vorliegen."
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Sudoku"
+    IDR_SudokuSquareTYPE    "\nSudokuSquare\nSudokuSquare\nSudokuSquare Files (*.sud)\n.sud\nSudokuSquare.Document\nQuadratisches Sudoku"
+    IDR_SudokuDuoTYPE       "\nSudokuDuo\nSudokuDuo\nSudokuDuo Files (*.duo)\n.duo\nSudokuDuo.Document\nDuo Sudoku"
+    IDR_SudokuSamuraiTYPE   "\nSudokuSamurai\nSudokuSamurai\nSudoku Samurai Files (*.sam)\n.sam\nSudokuSamurai.Document\nSamurai Sudoku"
+    IDS_TAB_BOARD_8X8       "Board 8x8"
+    IDS_TAB_BOARD_9X9       "Board 9x9"
+    IDS_TAB_BOARD_12X12     "Board 12x12"
+    IDS_TAB_BOARD_DUO       "Board Duo"
+    IDS_TAB_BOARD_SAMURAI   "Board Samurai"
+    IDS_TAB_BOARD_16X16     "Board 16x16"
+    IDS_STRING_SIF          "Einzelkandidaten im Feld:"
+    IDS_STRING_SOB          "Einzelkandidaten im Raster:"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "SudokuMDI"
+    AFX_IDS_IDLEMESSAGE     "Bereit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Erstellt ein neues Dokument.\nNeu"
+    ID_FILE_OPEN            "Öffnet ein vorhandenes Dokument.\nÖffnen"
+    ID_FILE_CLOSE           "Schließt das aktive Dokument.\nSchließen"
+    ID_FILE_SAVE            "Speichert das aktive Dokument.\nSpeichern"
+    ID_FILE_SAVE_AS         "Speichert das aktive Dokument unter einem neuem Namen.\nSpeichern unter"
+    ID_FILE_PAGE_SETUP      "Ändert die Druckoptionen.\nSeite einrichten"
+    ID_FILE_PRINT_SETUP     "Ändert den Drucker und die Druckoptionen.\nDruckereinrichtung"
+    ID_FILE_PRINT           "Druckt das aktive Dokument.\nDrucken"
+    ID_FILE_PRINT_PREVIEW   "Zeigt ganze Seiten an.\nSeitenansicht"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Zeigt Programm-, Versions- und Copyrightinformationen an.\nInfo"
+    ID_APP_EXIT             "Beendet die Anwendung und fordert zum Speichern der Dokumente auf.\nBeenden"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE2       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE3       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE4       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE5       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE6       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE7       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE8       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE9       "Öffnet das Dokument."
+    ID_FILE_MRU_FILE10      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE11      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE12      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE13      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE14      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE15      "Öffnet das Dokument."
+    ID_FILE_MRU_FILE16      "Öffnet das Dokument."
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Wechselt zum nächsten Fensterbereich.\nNächster Bereich"
+    ID_PREV_PANE            "Wechselt zum vorherigen Fensterbereich.\nVorheriger Bereich"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_NEW           "Öffnet ein weiteres Fenster für das aktive Dokument.\nNeues Fenster"
+    ID_WINDOW_ARRANGE       "Ordnet die Symbole im unteren Fensterrand an.\nSymbole anordnen"
+    ID_WINDOW_CASCADE       "Ordnet die Fenster überlappend an.\nÜberlappende Fenster"
+    ID_WINDOW_TILE_HORZ     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_TILE_VERT     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_SPLIT         "Teilt das aktive Fenster in Bereiche.\nTeilen"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Löscht die Auswahl.\nLöschen"
+    ID_EDIT_CLEAR_ALL       "Löscht alles.\nAlles löschen"
+    ID_EDIT_COPY            "Kopiert die Auswahl in die Zwischenablage.\nKopieren"
+    ID_EDIT_CUT             "Überträgt die Auswahl in die Zwischenablage.\nAusschneiden"
+    ID_EDIT_FIND            "Sucht den angegebenen Text.\nSuchen"
+    ID_EDIT_PASTE           "Fügt den Inhalt der Zwischenablage ein.\nEinfügen"
+    ID_EDIT_REPEAT          "Wiederholt den letzten Vorgang.\nWiederholen"
+    ID_EDIT_REPLACE         "Ersetzt den angegebenen Text.\nErsetzen"
+    ID_EDIT_SELECT_ALL      "Markiert das gesamte Dokument.\nAlles auswählen"
+    ID_EDIT_UNDO            "Macht den letzten Vorgang rückgängig.\nRückgängig"
+    ID_EDIT_REDO            "Wiederholt den zuletzt rückgängig gemachten Vorgang.\nWiederherstellen"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Blendet die Symbolleiste ein oder aus.\nSymbolleiste"
+    ID_VIEW_STATUS_BAR      "Blendet die Statusleiste ein oder aus.\nStatusleiste"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Ändert die Fenstergröße."
+    AFX_IDS_SCMOVE          "Ändert die Position des Fensters."
+    AFX_IDS_SCMINIMIZE      "Minimiert das Fenster."
+    AFX_IDS_SCMAXIMIZE      "Maximiert das Fenster."
+    AFX_IDS_SCNEXTWINDOW    "Wechselt zum nächsten Dokumentfenster."
+    AFX_IDS_SCPREVWINDOW    "Wechselt zum vorherigen Dokumentfenster."
+    AFX_IDS_SCCLOSE         "Schließt das aktive Fenster und fordert zum Speichern des Dokuments auf."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Stellt die ursprüngliche Fenstergröße wieder her."
+    AFX_IDS_SCTASKLIST      "Aktiviert die Taskliste."
+    AFX_IDS_MDICHILD        "Aktiviert dieses Fenster."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Beendet die Seitenansicht.\nSeitenansicht beenden"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ANSICHT_CURSORBAR    "Blendet Pfeiltasten für Mausbedienung ein"
+    ID_AKTIONEN_SINGLEINFIELD "Anzeige von Einzelkandidaten im Feld"
+    ID_AKTIONEN_SELECTSINGLE 
+                            "Anzeige von Einzelkandidaten in Reihe, Spalte oder Quadrat"
+    ID_AKTIONEN_SELECTPAIR  "Zeigt Kandidatenpaare im Feld"
+    ID_MOVE_LEFT            "Bewegt Raster nach links"
+    ID_MOVE_UP              "Bewegt Raster nach oben"
+    ID_MOVE_DOWN            "Bewegt Raster nach unten"
+    ID_MOVE_RIGHT           "Bewegt Raster nach rechts"
+END
+
+STRINGTABLE
+BEGIN
+    ID_SQUARE_9X9           "Erzeugt leeres 9x9 Sudoku Raster"
+    ID_SQUARE_12X12         "Erzeugt leeres 12x12 Sudoku Raster"
+    ID_SQUARE_16X16         "Erzeugt leeres 16x16 Sudoku Raster"
+    ID_NEU_DUO              "Erzeugt leeres Duo Sudoku Raster"
+    ID_NEU_SAMURAI          "Erzeugt leeres Samurai Sudoku Raster"
+    ID_BEGIN_TRIAL          "Starte Versuchseingaben"
+    ID_UNDO_TRIAL           "Lösche Versuchseingaben bis zum Marker"
+    ID_EDIT_MODE            "Aktiviert/Deaktiviert den Eingabemodus"
+    ID_BEARBEITEN_EIGENSCHAFTEN "Öffnet den Eigenschaftendialg"
+    ID_ANSICHT_REFRESH      "Aktualisiert die Anzeige"
+    ID_ANSICHT_MIT_KAND     "Zeigt die möglichen Kandidaten im Raster an"
+    ID_ANSICHT_MOUSEPAD     "Blendet Tastatur für Mausbedienung ein"
+END
+
+STRINGTABLE
+BEGIN
+    ID_ANSICHT_SUDOKULEISTE "Blendet die Sudokuleiste ein oder aus"
+    ID_ANSICHT_MOVEBOARD    "Blendet die Bewegungsleiste ein oder aus"
+    ID_AKTIONEN_SOLVE_LEVEL2 
+                            "Löst Felder mit Einzelkandidaten in Spalte, Reihe oder Quadrat"
+    ID_AKTIONEN_SOLVE_LEVEL1 "Löst Felder mit nur einem Kandidaten"
+END
+
+STRINGTABLE
+BEGIN
+    ID_AKTIONEN_SELECTTRIPLE "Zeigt Kandidatentriples"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#include "res\SudokuMDI.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.DEU\afxres.rc"          // Standardkomponenten
+#include "l.DEU\afxprint.rc"        // Ressourcen für Drucken/Seitenansicht
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

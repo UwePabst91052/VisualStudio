@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CSudokuDoc" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>SGEMgEHEcgohDAMWCgrggBDIEHo8AoDCGCAAiuLAgQA=</HashCode>
+      <FileName>SudokuDoc.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_pSudokuBoard" />
+      <Field Name="m_pUndoList" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CSudokuDuoDoc" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAQAACAAAACgBAgAAAADAgAgEAEAEAAAAAAAA=</HashCode>
+      <FileName>SudokuDuoDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuMDIView" Collapsed="true">
+    <Position X="5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAQgBAAgACCgJkiAAAgLQCAgQCEA0IAAAQgQA=</HashCode>
+      <FileName>SudokuMDIView.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="myCandDisplay" />
+      <Field Name="mySudokuScore" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CCandDisplay" Collapsed="true">
+    <Position X="8" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAQAAQAAAAAACAiBAgAAAABQIAAAIEAAAAEAAAEA=</HashCode>
+      <FileName>CandDisplay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuScore" Collapsed="true">
+    <Position X="5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAQIBIgQIAAYAGAgFoBAAgABIgAECAAQgDAgCQBAg=</HashCode>
+      <FileName>SudokuScore.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuBoard" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAIAMDQ4iJA6AQrUYuoiiQghDMsAgEYMCEAENBIgoI=</HashCode>
+      <FileName>SudokuBoard.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="myCandCounter" />
+      <Field Name="mySingleCounter" />
+      <Field Name="mySudokuRows" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="mySudokuColumns" />
+      <Field Name="mySudokuSquares" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CSudokuBoardDuo" Collapsed="true">
+    <Position X="1" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEQIQIBQ4gJAyAQJUYAACgQgBDMMAgAAMCEAEKBIEAA=</HashCode>
+      <FileName>SudokuBoardDuo.h</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="mySudokuUnion" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CSudokuBoardSamurai" Collapsed="true">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gECIAIBQ4oJAyAQJUYAACgQgBDMcAgAAMCEAEKBKAAA=</HashCode>
+      <FileName>SudokuBoardSamurai.h</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="mySudokuUnions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CUndoList" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAQgAAAECAAABQACAAADQAAgABEAAAEAAAACA=</HashCode>
+      <FileName>UndoList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuSquareDoc" Collapsed="true">
+    <Position X="1.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAACgBAgACAADAwAgAAGAAAAAAAAAY=</HashCode>
+      <FileName>SudokuSquareDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuSamuraiDoc" Collapsed="true">
+    <Position X="5.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAQAAAAAAACgBAoAAAADAgAgAAEAAAABAAQAA=</HashCode>
+      <FileName>SudokuSamuraiDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCandCounter" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAIAAAAABAgAAAAgAAAAAAAAAAgAAAACAAAAAAA=</HashCode>
+      <FileName>SudokuBoard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSudokuField" Collapsed="true">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QBiACCAgQAQAAAOAUAFrwQAhBToCAgBQMBhAAGDIQCA=</HashCode>
+      <FileName>SudokuField.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_pFieldEdit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CSudokoEdit" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QECAAIgKQAAEAYACAoFggAAQgDIABkAAGBIIQABAAAI=</HashCode>
+      <FileName>SudokoEdit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CObject" Collapsed="true">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAQAQAAAAACAAAgQAAADAAAAAAEUAAAEAAAAA=</HashCode>
+      <FileName>c:\program files\microsoft visual studio 9.0\vc\atlmfc\include\afx.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CObArray" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAZAAABAUCAAADCgCACYgAACAjIAAwgEOAAIAAAAAAA=</HashCode>
+      <FileName>c:\program files\microsoft visual studio 9.0\vc\atlmfc\include\afxcoll.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
