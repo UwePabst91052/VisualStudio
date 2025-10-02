@@ -222,7 +222,7 @@ void CWorkday::Serialize(CArchive& ar)
             >> m_curTime.endTime
             >> m_curTime.duration
             >> m_sumDuration;
-        if (nSchema == 1) 
+        if (nSchema == 1)
         {
             ar >> m_note;
             parseNoteString();
@@ -245,6 +245,12 @@ void CWorkday::Serialize(CArchive& ar)
                 >> wt->endTime
                 >> wt->duration;
             m_workTimes.AddTail(wt);
+        }
+        if (count_wt == 0)
+        {
+            m_curTime.startTime = 0;
+            m_curTime.endTime = 0;
+            m_sumDuration = 0;
         }
     }
 }
@@ -464,6 +470,10 @@ void CWorkpackage::DeleteWorktimeArchive(ATL::CTime &dateTime, HANDLE hwt)
         if (*wd == date)
         {
             wd->deleteWorktimeArchive(hwt);
+            if (wd->getCountWorktimes() == 0)
+            {
+                wd->deleteWorktimeCurrent();
+            }
         }
     }
 }
