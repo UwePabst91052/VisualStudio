@@ -17,10 +17,7 @@
 /RegisterWebserver/.vs/RegisterWebserver/v15
 /RegisterWebserver/RegisterWebserver/bin/Debug
 /RegisterWebserver/RegisterWebserver/obj/Debug
-Zeiterfassung/.vs/Zeiterfassung/v15/.suo
-Zeiterfassung/.vs/Zeiterfassung/v15/Browse.VC.db
-Zeiterfassung/.vs/Zeiterfassung/v15/ipch/4692a2e85bd1a680.ipch
-Zeiterfassung/.vs/Zeiterfassung/v15/ipch/208404c9a7b8f430.ipch
+Zeiterfassung/.vs/*
 Zeiterfassung/Backup/Zeiterfassung.sln
 Zeiterfassung/Backup/Zeiterfassung.v11.suo
 Zeiterfassung/Debug
