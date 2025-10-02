@@ -588,10 +588,9 @@ CString& CWorkpackage::getDuration(ATL::CTime &date)
     return m_strTime;
 }
 
-CTimeSpan& CWorkpackage::getDurationPerDay(CTime& date)
+CTimeSpan CWorkpackage::getDurationPerDay(CTime& date)
 {
     CWorkday* wd;
-    CTimeSpan  retTime;
     POSITION pos = m_workDays.GetHeadPosition();
     while (NULL != pos)
     {
@@ -602,7 +601,7 @@ CTimeSpan& CWorkpackage::getDurationPerDay(CTime& date)
             break;
         }
     }
-    return (retTime = 0);
+    return CTimeSpan(0);
 }
 
 bool CWorkpackage::isWorktimeRunning(ATL::CTime &date)

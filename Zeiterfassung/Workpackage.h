@@ -140,7 +140,7 @@ public:
     void DeleteNoteOfDay(CTime& dateTime);
     void DeleteAllNotes();
     int GetCountLines(void);
-    CTimeSpan& getDurationPerDay(CTime& date);
+    CTimeSpan getDurationPerDay(CTime& date);
     CWorkday* getNextWorkday(CTime& date);
     CWorkday* getPrevWorkday(CTime& date);
 	void serializeXml(CArchive& ar, CXmlDocument& doc);
