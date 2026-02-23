@@ -25,13 +25,19 @@ namespace DisplayIntTestStatistics
         private string[] buildNumbers = null;
         private static string folderRootLocal = @"D:\PostMerge\workspace\";
         private static string folderRootRemote = @"\\194.138.158.199\PostMerge\workspace\";
-        private static string ptrFolderLocal = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
-        private static string ptrFolderRemote = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderLocalPinky3 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderRemotePinky3 = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderLocalPinky5 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
+        private static string ptrFolderRemotePinky5 = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
+        private string jenkinsAgent = "Pinky_3";
         private string folderRoot = folderRootRemote;
+        private string ptrFolderLocal = ptrFolderLocalPinky3;
+        private string ptrFolderRemote = ptrFolderRemotePinky3;
         private string selectedFolder = "";
         private int numberTestFiles = 100;
         string[] ptrProjectFiles;
         private FileSystemWatcher watcher = new FileSystemWatcher();
+        public string JenkinsAgent { set => jenkinsAgent = value; }
         public string SelectedFolder { get => selectedFolder; }
         public int NumberTestFiles { get => numberTestFiles; }
 
@@ -44,6 +50,27 @@ namespace DisplayIntTestStatistics
         {
             lbPostmergeTests.Items.Add("TargetSetup");
             lbPostmergeTests.Items.Add("TestSuite");
+
+            if (jenkinsAgent == "Pinky_3")
+            {
+                ptrFolderLocal = ptrFolderLocalPinky3;
+                ptrFolderRemote = ptrFolderRemotePinky3;
+            }
+            else
+            {
+                ptrFolderLocal = ptrFolderLocalPinky5;
+                ptrFolderRemote = ptrFolderRemotePinky5;
+            }
+
+            if (rbLocal.IsChecked == true)
+            {
+                FillPtrProjectsList(ptrFolderLocal);
+            }
+
+            if (rbRemote.IsChecked == true)
+            {
+                FillPtrProjectsList(ptrFolderRemote);
+            }
 
             watcher.Created += OnCreated;
         }

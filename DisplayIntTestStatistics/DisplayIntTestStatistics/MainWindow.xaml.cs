@@ -31,6 +31,7 @@ namespace DisplayIntTestStatistics
         private FileSystemWatcher watcher = new FileSystemWatcher();
         private bool isObservationOn = false;
         private int maxNumberFiles = 0;
+        private string jenkinsAgent = "Pinky_3";
 
         public MainWindow()
         {
@@ -228,6 +229,7 @@ namespace DisplayIntTestStatistics
         private void BtnSelectFolder_Click(object sender, RoutedEventArgs e)
         {
             Window1 selectPoUp = new Window1();
+            selectPoUp.JenkinsAgent = jenkinsAgent;
             selectPoUp.ShowDialog();
             if (selectPoUp.SelectedFolder != "")
             {
@@ -244,6 +246,16 @@ namespace DisplayIntTestStatistics
             WindowUnittests windowUnittests = new WindowUnittests();
             windowUnittests.ResultPath = tbTestResultsPath.Text + @"\Unittests";
             windowUnittests.ShowDialog();
+        }
+
+        private void RbPinky5_Checked(object sender, RoutedEventArgs e)
+        {
+            jenkinsAgent = "Pinky_5";
+        }
+
+        private void RbPinky3_Checked(object sender, RoutedEventArgs e)
+        {
+            jenkinsAgent = "Pinky_3";
         }
     }
 
