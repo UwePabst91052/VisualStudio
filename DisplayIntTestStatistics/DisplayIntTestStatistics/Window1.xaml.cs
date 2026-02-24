@@ -24,13 +24,14 @@ namespace DisplayIntTestStatistics
     {
         private string[] buildNumbers = null;
         private static string folderRootLocal = @"D:\PostMerge\workspace\";
-        private static string folderRootRemote = @"\\194.138.158.199\PostMerge\workspace\";
+        private static string folderRootRemotePinky3 = @"\\194.138.158.199\PostMerge\workspace\";
+        private static string folderRootRemotePinky5 = @"\\194.138.159.1\workspace\";
         private static string ptrFolderLocalPinky3 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
-        private static string ptrFolderRemotePinky3 = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
+        private static string ptrFolderRemotePinky3 = @"\\194.138.158.199\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private static string ptrFolderLocalPinky5 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
-        private static string ptrFolderRemotePinky5 = @"\\194.138.158.199\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
+        private static string ptrFolderRemotePinky5 = @"\\194.138.159.1\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
         private string jenkinsAgent = "Pinky_3";
-        private string folderRoot = folderRootRemote;
+        private string folderRoot = folderRootLocal;
         private string ptrFolderLocal = ptrFolderLocalPinky3;
         private string ptrFolderRemote = ptrFolderRemotePinky3;
         private string selectedFolder = "";
@@ -198,7 +199,14 @@ namespace DisplayIntTestStatistics
             if ((sender as RadioButton).Name == "rbRemote")
             {
                 FillPtrProjectsList(ptrFolderRemote);
-                folderRoot = folderRootRemote;
+                if (jenkinsAgent == "Pinky_3")
+                {
+                    folderRoot = folderRootRemotePinky3;
+                }
+                else
+                {
+                    folderRoot = folderRootRemotePinky5;
+                }
             }
 
             lbBuildNumbers.Items.Clear();
