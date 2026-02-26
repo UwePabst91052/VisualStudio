@@ -183,14 +183,14 @@ namespace DisplayIntTestStatistics
 
             if ((sender as RadioButton).Name == "rbPinky3")
             {
-                FillPtrProjectsList(ptrFolderRemote);
+                FillPtrProjectsList(ptrFolderRemotePinky3);
                 folderRoot = folderRootRemotePinky3;
                 jenkinsAgent = "Pinky_3";
             }
 
             if ((sender as RadioButton).Name == "rbPinky5")
             {
-                FillPtrProjectsList(ptrFolderRemote);
+                FillPtrProjectsList(ptrFolderRemotePinky5);
                 folderRoot = folderRootRemotePinky5;
                 jenkinsAgent = "Pinky_5";
             }
