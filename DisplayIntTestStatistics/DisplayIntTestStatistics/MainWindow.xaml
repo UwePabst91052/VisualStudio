@@ -54,7 +54,5 @@
             <TextBox x:Name="tbSum3" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="69" IsReadOnly="True" Grid.Column="2"/>
             <ListBox x:Name="lbFiles3" HorizontalAlignment="Left" Height="100" Margin="10,10,0,10" VerticalAlignment="Top" Width="666" Grid.ColumnSpan="3" SelectionMode="Extended" SelectionChanged="OnSelectionChanged"/>
         </WrapPanel>
-        <RadioButton x:Name="rbPinky3" Content="Pinky 3" HorizontalAlignment="Left" Height="17" Margin="38,67,0,0" VerticalAlignment="Top" Width="78" Checked="RbPinky3_Checked" IsChecked="True"/>
-        <RadioButton x:Name="rbPinky5" Content="Pinky 5" HorizontalAlignment="Left" Margin="126,67,0,0" VerticalAlignment="Top" Checked="RbPinky5_Checked"/>
     </Grid>
 </Window>

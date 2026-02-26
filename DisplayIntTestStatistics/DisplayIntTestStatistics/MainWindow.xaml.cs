@@ -195,7 +195,7 @@ namespace DisplayIntTestStatistics
                 string[] sub = testSuite.Split('.');
                 string search = sub.Last();
                 string target = "";
-                bool remote = tbTestResultsPath.Text.Contains("md2fmd5c");
+                bool remote = tbTestResultsPath.Text.Contains("194.138.");
                 switch ((sender as ListBox).Name)
                 {
                     case "lbFiles1":
@@ -210,7 +210,7 @@ namespace DisplayIntTestStatistics
                     default:
                         break;
                 }
-                string Url = ptrResultContent.SearchForUrl(target, search, remote);
+                string Url = ptrResultContent.SearchForUrl(target, search, remote, jenkinsAgent);
                 try
                 {
                     Process.Start(Url);
@@ -229,7 +229,6 @@ namespace DisplayIntTestStatistics
         private void BtnSelectFolder_Click(object sender, RoutedEventArgs e)
         {
             Window1 selectPoUp = new Window1();
-            selectPoUp.JenkinsAgent = jenkinsAgent;
             selectPoUp.ShowDialog();
             if (selectPoUp.SelectedFolder != "")
             {
@@ -239,6 +238,7 @@ namespace DisplayIntTestStatistics
                 pbCollectData.Maximum = maxNumberFiles;
                 pbCollectData.Value = 0;
             }
+            jenkinsAgent = selectPoUp.JenkinsAgent;
         }
 
         private void BtnUnittests_Click(object sender, RoutedEventArgs e)
@@ -246,16 +246,6 @@ namespace DisplayIntTestStatistics
             WindowUnittests windowUnittests = new WindowUnittests();
             windowUnittests.ResultPath = tbTestResultsPath.Text + @"\Unittests";
             windowUnittests.ShowDialog();
-        }
-
-        private void RbPinky5_Checked(object sender, RoutedEventArgs e)
-        {
-            jenkinsAgent = "Pinky_5";
-        }
-
-        private void RbPinky3_Checked(object sender, RoutedEventArgs e)
-        {
-            jenkinsAgent = "Pinky_3";
         }
     }
 
@@ -412,7 +402,7 @@ namespace DisplayIntTestStatistics
             return testSuite;
         }
 
-        internal string SearchForUrl(string target, string search, bool remote)
+        internal string SearchForUrl(string target, string search, bool remote, string jenkinsAgent)
         {
             string logFileUrl = "";
             if (resultTargets.TryGetValue(target, out List<PtrResultDetail> value))
@@ -421,7 +411,14 @@ namespace DisplayIntTestStatistics
                 string[] sub = logFilePath.Split('\\', '.');
                 if (remote)
                 {
-                    sub[0] = "file://md2fmd5c";
+                    if (jenkinsAgent == "Pinky_3")
+                    {
+                        sub[0] = "file://194.138.158.199";
+                    }
+                    else
+                    {
+                        sub[0] = "file://194.138.159.1";
+                    }
                 }
                 else
                 {

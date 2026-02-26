@@ -25,7 +25,7 @@ namespace DisplayIntTestStatistics
         private string[] buildNumbers = null;
         private static string folderRootLocal = @"D:\PostMerge\workspace\";
         private static string folderRootRemotePinky3 = @"\\194.138.158.199\PostMerge\workspace\";
-        private static string folderRootRemotePinky5 = @"\\194.138.159.1\workspace\";
+        private static string folderRootRemotePinky5 = @"\\194.138.159.1\PostMerge\workspace\";
         private static string ptrFolderLocalPinky3 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private static string ptrFolderRemotePinky3 = @"\\194.138.158.199\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky3";
         private static string ptrFolderLocalPinky5 = @"D:\git\WinAC_Plus\Test\PTR\Projects\Postmerge_Pinky5";
@@ -38,9 +38,9 @@ namespace DisplayIntTestStatistics
         private int numberTestFiles = 100;
         string[] ptrProjectFiles;
         private FileSystemWatcher watcher = new FileSystemWatcher();
-        public string JenkinsAgent { set => jenkinsAgent = value; }
         public string SelectedFolder { get => selectedFolder; }
         public int NumberTestFiles { get => numberTestFiles; }
+        public string JenkinsAgent { get => jenkinsAgent; }
 
         public Window1()
         {
@@ -52,25 +52,9 @@ namespace DisplayIntTestStatistics
             lbPostmergeTests.Items.Add("TargetSetup");
             lbPostmergeTests.Items.Add("TestSuite");
 
-            if (jenkinsAgent == "Pinky_3")
-            {
-                ptrFolderLocal = ptrFolderLocalPinky3;
-                ptrFolderRemote = ptrFolderRemotePinky3;
-            }
-            else
-            {
-                ptrFolderLocal = ptrFolderLocalPinky5;
-                ptrFolderRemote = ptrFolderRemotePinky5;
-            }
-
             if (rbLocal.IsChecked == true)
             {
                 FillPtrProjectsList(ptrFolderLocal);
-            }
-
-            if (rbRemote.IsChecked == true)
-            {
-                FillPtrProjectsList(ptrFolderRemote);
             }
 
             watcher.Created += OnCreated;
@@ -194,23 +178,24 @@ namespace DisplayIntTestStatistics
             {
                 FillPtrProjectsList(ptrFolderLocal);
                 folderRoot = folderRootLocal;
+                jenkinsAgent = "local";
             }
 
-            if ((sender as RadioButton).Name == "rbRemote")
+            if ((sender as RadioButton).Name == "rbPinky3")
             {
                 FillPtrProjectsList(ptrFolderRemote);
-                if (jenkinsAgent == "Pinky_3")
-                {
-                    folderRoot = folderRootRemotePinky3;
-                }
-                else
-                {
-                    folderRoot = folderRootRemotePinky5;
-                }
+                folderRoot = folderRootRemotePinky3;
+                jenkinsAgent = "Pinky_3";
+            }
+
+            if ((sender as RadioButton).Name == "rbPinky5")
+            {
+                FillPtrProjectsList(ptrFolderRemote);
+                folderRoot = folderRootRemotePinky5;
+                jenkinsAgent = "Pinky_5";
             }
 
             lbBuildNumbers.Items.Clear();
         }
-
     }
 }

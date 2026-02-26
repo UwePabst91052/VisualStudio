@@ -23,8 +23,9 @@
         <Label x:Name="label1" Content="Select PTR project" HorizontalAlignment="Left" Margin="10,187,0,88"/>
         <ListBox x:Name="lbPtrProjects" HorizontalAlignment="Left" Height="101" Margin="10,218,0,0" VerticalAlignment="Top" Width="223" SelectionChanged="LbPtrProjects_SelectionChanged" Grid.RowSpan="2"/>
         <Label x:Name="labelNumberFiles" Content="" HorizontalAlignment="Left" Margin="120,24,0,0" VerticalAlignment="Top" Width="113" Grid.Row="1"/>
-        <RadioButton x:Name="rbRemote" Content="Remote" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" GroupName="groupLogfileLocation" Checked="GroupLogfileLocation_Checked"/>
-        <RadioButton x:Name="rbLocal" Content="local" HorizontalAlignment="Left" Margin="174,10,0,0" VerticalAlignment="Top" GroupName="groupLogfileLocation" IsChecked="True" Checked="GroupLogfileLocation_Checked"/>
+        <RadioButton x:Name="rbLocal" Content="local" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" GroupName="groupLogfileLocation" IsChecked="True" Checked="GroupLogfileLocation_Checked"/>
+        <RadioButton x:Name="rbPinky3" Content="Pinky 3" HorizontalAlignment="Left" Height="17" Margin="82,10,0,0" VerticalAlignment="Top" Width="78" Checked="GroupLogfileLocation_Checked" IsChecked="False" GroupName="groupLogfileLocation"/>
+        <RadioButton x:Name="rbPinky5" Content="Pinky 5" HorizontalAlignment="Left" Margin="148,11,0,0" VerticalAlignment="Top" Checked="GroupLogfileLocation_Checked" GroupName="groupLogfileLocation"/>
 
     </Grid>
 </Window>
