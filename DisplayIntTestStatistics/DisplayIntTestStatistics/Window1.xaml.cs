@@ -68,8 +68,11 @@ namespace DisplayIntTestStatistics
             }
             catch (IOException ex)
             {
-                MessageBox.Show(ex.Message + "\nSwitch to local settings.");
-                return;
+                if (ptrProjectFiles.Count() == 0)
+                {
+                    MessageBox.Show(ex.Message + "\nSwitch to local settings.");
+                    return;
+                }
             }
             lbPtrProjects.Items.Clear();
             foreach (string file in ptrProjectFiles)

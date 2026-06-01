@@ -128,11 +128,11 @@ namespace DisplayIntTestStatistics
         {
             ResetTargetResults();
             int numberFailedTests = UpdateStatistics();
-            pbCollectData.Maximum = maxNumberFiles + numberFailedTests;
+            pbCollectData.Maximum = maxNumberFiles;
             if (numberFilesScanned > 0)
             {
                 string statusText = string.Format("{0} files from {1} scanned",
-                    numberFilesScanned, maxNumberFiles + numberFailedTests);
+                    numberFilesScanned, maxNumberFiles);
                 pbCollectData.Value = numberFilesScanned;
                 UpdateStatus(statusText);
             }
@@ -183,7 +183,7 @@ namespace DisplayIntTestStatistics
             Dispatcher.Invoke(() => ResetTargetResults());
             int numberFailedTests = Dispatcher.Invoke(() => UpdateStatistics());
             string statusText = string.Format("{0} files from {1} scanned", ++numberFilesScanned, maxNumberFiles);
-            Dispatcher.Invoke(() => pbCollectData.Maximum = maxNumberFiles + numberFailedTests);
+            Dispatcher.Invoke(() => pbCollectData.Maximum = maxNumberFiles);
             Dispatcher.Invoke(() => pbCollectData.Value = numberFilesScanned);
             Dispatcher.Invoke(() => UpdateStatus(statusText));
         }
