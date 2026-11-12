@@ -37,7 +37,7 @@ namespace TeeUhr
             player.Load();
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void Timer_Elapsed(object sender, EventArgs e)
         {
             int seconds = (_min * 60) + _sec;
             if (seconds > 0)
@@ -107,8 +107,8 @@ namespace TeeUhr
         private void FormatTime()
         {
             displayTime.Text = String.Format("{0,2:D2}:{1,2:D2}", _min, _sec);
-            scrollMinutes.Track.Value = _min;
-            scrollSeconds.Track.Value = _sec;
+            scrollMinutes.Value = _min;
+            scrollSeconds.Value = _sec;
         }
     }
 }
